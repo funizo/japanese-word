@@ -1,0 +1,73 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
+
+:root {
+  color-scheme: light;
+  --canvas: #f5f7fb;
+  --surface: #ffffff;
+  --ink: #1b2844;
+  --muted: #647087;
+  --line: #e1e6ef;
+  --accent: #345bd6;
+  --card: #203e87;
+  --card-muted: #c5d3f5;
+  --selection-background: #dce6ff;
+  --selection-foreground: #1b2844;
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --canvas: #101827;
+  --surface: #182337;
+  --ink: #eff4ff;
+  --muted: #a4b2ca;
+  --line: #303e55;
+  --accent: #91b0ff;
+  --card: #1b3267;
+  --card-muted: #c5d3f5;
+  --selection-background: #334b78;
+  --selection-foreground: #eff4ff;
+}
+
+@theme inline {
+  --color-canvas: var(--canvas);
+  --color-surface: var(--surface);
+  --color-ink: var(--ink);
+  --color-muted: var(--muted);
+  --color-line: var(--line);
+  --color-accent: var(--accent);
+  --color-card: var(--card);
+  --color-card-muted: var(--card-muted);
+  --font-sans: Arial, "Apple SD Gothic Neo", "Malgun Gothic", "Noto Sans KR", sans-serif;
+  --font-japanese: "Yu Mincho", "Hiragino Mincho ProN", "Noto Serif JP", "MS PMincho", serif;
+}
+
+body {
+  background: var(--canvas);
+  color: var(--ink);
+  font-family: var(--font-sans);
+  -webkit-tap-highlight-color: transparent;
+}
+
+::selection {
+  background: var(--selection-background);
+  color: var(--selection-foreground);
+}
+
+:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 5px;
+}
+
+.safe-area {
+  padding-left: max(1.25rem, env(safe-area-inset-left));
+  padding-right: max(1.25rem, env(safe-area-inset-right));
+}
+
+@media (min-width: 640px) {
+  .safe-area {
+    padding-left: max(2rem, env(safe-area-inset-left));
+    padding-right: max(2rem, env(safe-area-inset-right));
+  }
+}
