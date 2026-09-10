@@ -2,13 +2,12 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "japanese-word: 빌드 후 실행",
+      "name": "japanese-word: 개발 서버 (자동 반영)",
       "type": "node",
       "request": "launch",
       "program": "${workspaceFolder}/node_modules/next/dist/bin/next",
-      "args": ["start"],
+      "args": ["dev"],
       "cwd": "${workspaceFolder}",
-      "preLaunchTask": "japanese-word: 빌드",
       "console": "integratedTerminal",
       "autoAttachChildProcesses": true,
       "skipFiles": ["<node_internals>/**"],
@@ -19,11 +18,12 @@
       }
     },
     {
-      "name": "japanese-word: 개발 서버",
+      "name": "japanese-word: 빌드 후 실행",
       "type": "node",
       "request": "launch",
       "program": "${workspaceFolder}/node_modules/next/dist/bin/next",
-      "args": ["dev"],
+      "args": ["start"],
+      "preLaunchTask": "japanese-word: 빌드",
       "cwd": "${workspaceFolder}",
       "console": "integratedTerminal",
       "autoAttachChildProcesses": true,

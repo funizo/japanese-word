@@ -1,0 +1,355 @@
+{
+  "day": "day05",
+  "words": [
+    {
+      "word": "海外",
+      "mean": "해외",
+      "furigana": "かいがい",
+      "exampleSentence": "来年は海外で勉強したいです。",
+      "exampleSentenceMean": "내년에는 해외에서 공부하고 싶습니다."
+    },
+    {
+      "word": "会議",
+      "mean": "회의",
+      "furigana": "かいぎ",
+      "exampleSentence": "会議は三時から始まります。",
+      "exampleSentenceMean": "회의는 세 시부터 시작됩니다."
+    },
+    {
+      "word": "外国",
+      "mean": "외국",
+      "furigana": "がいこく",
+      "exampleSentence": "外国の文化に興味があります。",
+      "exampleSentenceMean": "외국 문화에 관심이 있습니다."
+    },
+    {
+      "word": "会社",
+      "mean": "회사",
+      "furigana": "かいしゃ",
+      "exampleSentence": "私の会社は駅の近くにあります。",
+      "exampleSentenceMean": "우리 회사는 역 근처에 있습니다."
+    },
+    {
+      "word": "会社員",
+      "mean": "회사원",
+      "furigana": "かいしゃいん",
+      "exampleSentence": "兄は会社員です。",
+      "exampleSentenceMean": "형은 회사원입니다."
+    },
+    {
+      "word": "階段",
+      "mean": "계단",
+      "furigana": "かいだん",
+      "exampleSentence": "階段で二階に上がります。",
+      "exampleSentenceMean": "계단으로 이 층에 올라갑니다."
+    },
+    {
+      "word": "開店",
+      "mean": "개점; 가게 문을 엶",
+      "furigana": "かいてん",
+      "exampleSentence": "この店は朝十時に開店します。",
+      "exampleSentenceMean": "이 가게는 아침 열 시에 문을 엽니다."
+    },
+    {
+      "word": "買い物",
+      "mean": "쇼핑; 장보기",
+      "furigana": "かいもの",
+      "exampleSentence": "日曜日に母と買い物に行きます。",
+      "exampleSentenceMean": "일요일에 어머니와 장을 보러 갑니다."
+    },
+    {
+      "word": "会話",
+      "mean": "회화; 대화",
+      "furigana": "かいわ",
+      "exampleSentence": "友だちと日本語で会話をします。",
+      "exampleSentenceMean": "친구와 일본어로 대화합니다."
+    },
+    {
+      "word": "買う",
+      "mean": "사다",
+      "furigana": "かう",
+      "exampleSentence": "帰りに牛乳を買います。",
+      "exampleSentenceMean": "돌아가는 길에 우유를 삽니다."
+    },
+    {
+      "word": "返す",
+      "mean": "돌려주다; 반납하다",
+      "furigana": "かえす",
+      "exampleSentence": "明日、図書館に本を返します。",
+      "exampleSentenceMean": "내일 도서관에 책을 반납합니다."
+    },
+    {
+      "word": "帰る",
+      "mean": "돌아가다; 귀가하다",
+      "furigana": "かえる",
+      "exampleSentence": "今日は六時に家へ帰ります。",
+      "exampleSentenceMean": "오늘은 여섯 시에 집에 돌아갑니다."
+    },
+    {
+      "word": "顔",
+      "mean": "얼굴",
+      "furigana": "かお",
+      "exampleSentence": "朝、冷たい水で顔を洗います。",
+      "exampleSentenceMean": "아침에 찬물로 얼굴을 씻습니다."
+    },
+    {
+      "word": "画家",
+      "mean": "화가",
+      "furigana": "がか",
+      "exampleSentence": "姉は画家になりたいと言っています。",
+      "exampleSentenceMean": "언니는 화가가 되고 싶다고 합니다."
+    },
+    {
+      "word": "係り",
+      "mean": "담당; 담당자",
+      "furigana": "かかり",
+      "exampleSentence": "詳しいことは係りの人に聞いてください。",
+      "exampleSentenceMean": "자세한 것은 담당자에게 물어보세요."
+    },
+    {
+      "word": "かかる",
+      "mean": "시간이나 비용이 들다",
+      "furigana": "かかる",
+      "exampleSentence": "駅まで歩いて十分かかります。",
+      "exampleSentenceMean": "역까지 걸어서 10분 걸립니다."
+    },
+    {
+      "word": "かぎ",
+      "mean": "열쇠",
+      "furigana": "かぎ",
+      "exampleSentence": "かぎをかばんに入れました。",
+      "exampleSentenceMean": "열쇠를 가방에 넣었습니다."
+    },
+    {
+      "word": "書く",
+      "mean": "쓰다; 적다",
+      "furigana": "かく",
+      "exampleSentence": "ここに名前を書いてください。",
+      "exampleSentenceMean": "여기에 이름을 써 주세요."
+    },
+    {
+      "word": "かぐ",
+      "mean": "가구(家具)",
+      "furigana": "かぐ",
+      "exampleSentence": "新しい部屋に置くかぐを買いました。",
+      "exampleSentenceMean": "새 방에 놓을 가구를 샀습니다."
+    },
+    {
+      "word": "学生",
+      "mean": "학생",
+      "furigana": "がくせい",
+      "exampleSentence": "私は大学の学生です。",
+      "exampleSentenceMean": "저는 대학생입니다."
+    },
+    {
+      "word": "かさ",
+      "mean": "우산",
+      "furigana": "かさ",
+      "exampleSentence": "雨なので、かさを持っていきます。",
+      "exampleSentenceMean": "비가 오므로 우산을 가져갑니다."
+    },
+    {
+      "word": "かざる",
+      "mean": "장식하다; 꾸미다",
+      "furigana": "かざる",
+      "exampleSentence": "部屋に花をかざりました。",
+      "exampleSentenceMean": "방에 꽃을 장식했습니다."
+    },
+    {
+      "word": "家事",
+      "mean": "집안일; 가사",
+      "furigana": "かじ",
+      "exampleSentence": "家族で家事を分担しています。",
+      "exampleSentenceMean": "가족끼리 집안일을 나누어 하고 있습니다."
+    },
+    {
+      "word": "火事",
+      "mean": "화재; 불",
+      "furigana": "かじ",
+      "exampleSentence": "近所で火事がありました。",
+      "exampleSentenceMean": "근처에서 화재가 있었습니다."
+    },
+    {
+      "word": "貸す",
+      "mean": "빌려주다",
+      "furigana": "かす",
+      "exampleSentence": "友だちに本を貸しました。",
+      "exampleSentenceMean": "친구에게 책을 빌려주었습니다."
+    },
+    {
+      "word": "かぜ",
+      "mean": "감기",
+      "furigana": "かぜ",
+      "exampleSentence": "かぜをひいて学校を休みました。",
+      "exampleSentenceMean": "감기에 걸려 학교를 쉬었습니다."
+    },
+    {
+      "word": "風",
+      "mean": "바람",
+      "furigana": "かぜ",
+      "exampleSentence": "今日は風が強いです。",
+      "exampleSentenceMean": "오늘은 바람이 강합니다."
+    },
+    {
+      "word": "数える",
+      "mean": "세다",
+      "furigana": "かぞえる",
+      "exampleSentence": "人数を数えてください。",
+      "exampleSentenceMean": "인원수를 세어 주세요."
+    },
+    {
+      "word": "家族",
+      "mean": "가족",
+      "furigana": "かぞく",
+      "exampleSentence": "家族と一緒に住んでいます。",
+      "exampleSentenceMean": "가족과 함께 살고 있습니다."
+    },
+    {
+      "word": "固い",
+      "mean": "단단하다; 딱딱하다",
+      "furigana": "かたい",
+      "exampleSentence": "このパンは少し固いです。",
+      "exampleSentenceMean": "이 빵은 조금 딱딱합니다."
+    },
+    {
+      "word": "形",
+      "mean": "모양; 형태",
+      "furigana": "かたち",
+      "exampleSentence": "星の形のクッキーを作りました。",
+      "exampleSentenceMean": "별 모양의 쿠키를 만들었습니다."
+    },
+    {
+      "word": "片付ける",
+      "mean": "정리하다; 치우다",
+      "furigana": "かたづける",
+      "exampleSentence": "食事の後で机を片付けます。",
+      "exampleSentenceMean": "식사 후에 책상을 정리합니다."
+    },
+    {
+      "word": "カタログ",
+      "mean": "카탈로그; 상품 안내서",
+      "furigana": "かたろぐ",
+      "exampleSentence": "新しいカタログを見ました。",
+      "exampleSentenceMean": "새 카탈로그를 보았습니다."
+    },
+    {
+      "word": "かつ",
+      "mean": "이기다",
+      "furigana": "かつ",
+      "exampleSentence": "次の試合でかちたいです。",
+      "exampleSentenceMean": "다음 경기에서 이기고 싶습니다."
+    },
+    {
+      "word": "学校",
+      "mean": "학교",
+      "furigana": "がっこう",
+      "exampleSentence": "学校まで歩いて行きます。",
+      "exampleSentenceMean": "학교까지 걸어갑니다."
+    },
+    {
+      "word": "カッター",
+      "mean": "커터 칼",
+      "furigana": "かったー",
+      "exampleSentence": "カッターで紙を切ります。",
+      "exampleSentenceMean": "커터 칼로 종이를 자릅니다."
+    },
+    {
+      "word": "かど",
+      "mean": "모퉁이; 모서리",
+      "furigana": "かど",
+      "exampleSentence": "次のかどを右に曲がってください。",
+      "exampleSentenceMean": "다음 모퉁이에서 오른쪽으로 돌아 주세요."
+    },
+    {
+      "word": "悲しい",
+      "mean": "슬프다",
+      "furigana": "かなしい",
+      "exampleSentence": "友だちと別れて悲しいです。",
+      "exampleSentenceMean": "친구와 헤어져서 슬픕니다."
+    },
+    {
+      "word": "かならず",
+      "mean": "반드시; 꼭",
+      "furigana": "かならず",
+      "exampleSentence": "出かける前にかならずかぎをかけます。",
+      "exampleSentenceMean": "외출 전에 반드시 문을 잠급니다."
+    },
+    {
+      "word": "かばん",
+      "mean": "가방",
+      "furigana": "かばん",
+      "exampleSentence": "かばんの中に財布があります。",
+      "exampleSentenceMean": "가방 안에 지갑이 있습니다."
+    },
+    {
+      "word": "かぶる",
+      "mean": "머리에 쓰다",
+      "furigana": "かぶる",
+      "exampleSentence": "外では帽子をかぶります。",
+      "exampleSentenceMean": "밖에서는 모자를 씁니다."
+    },
+    {
+      "word": "かべ",
+      "mean": "벽",
+      "furigana": "かべ",
+      "exampleSentence": "かべに時計をかけました。",
+      "exampleSentenceMean": "벽에 시계를 걸었습니다."
+    },
+    {
+      "word": "髪",
+      "mean": "머리카락",
+      "furigana": "かみ",
+      "exampleSentence": "昨日、髪を切りました。",
+      "exampleSentenceMean": "어제 머리를 잘랐습니다."
+    },
+    {
+      "word": "紙",
+      "mean": "종이",
+      "furigana": "かみ",
+      "exampleSentence": "白い紙に絵を描きます。",
+      "exampleSentenceMean": "흰 종이에 그림을 그립니다."
+    },
+    {
+      "word": "雷",
+      "mean": "천둥; 번개",
+      "furigana": "かみなり",
+      "exampleSentence": "遠くで雷の音がしました。",
+      "exampleSentenceMean": "멀리서 천둥소리가 났습니다."
+    },
+    {
+      "word": "かむ",
+      "mean": "씹다; 물다",
+      "furigana": "かむ",
+      "exampleSentence": "よくかんで食べてください。",
+      "exampleSentenceMean": "잘 씹어서 드세요."
+    },
+    {
+      "word": "カメラ",
+      "mean": "카메라",
+      "furigana": "かめら",
+      "exampleSentence": "カメラで花の写真を撮ります。",
+      "exampleSentenceMean": "카메라로 꽃 사진을 찍습니다."
+    },
+    {
+      "word": "通う",
+      "mean": "다니다",
+      "furigana": "かよう",
+      "exampleSentence": "毎週、日本語教室に通っています。",
+      "exampleSentenceMean": "매주 일본어 교실에 다니고 있습니다."
+    },
+    {
+      "word": "火よう日",
+      "mean": "화요일",
+      "furigana": "かようび",
+      "exampleSentence": "火よう日は図書館へ行きます。",
+      "exampleSentenceMean": "화요일에는 도서관에 갑니다."
+    },
+    {
+      "word": "辛い",
+      "mean": "맵다",
+      "furigana": "からい",
+      "exampleSentence": "このカレーは辛いです。",
+      "exampleSentenceMean": "이 카레는 맵습니다."
+    }
+  ]
+}

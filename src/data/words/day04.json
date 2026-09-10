@@ -1,0 +1,355 @@
+{
+  "day": "day04",
+  "words": [
+    {
+      "word": "行う",
+      "mean": "행하다; 실시하다",
+      "furigana": "おこなう",
+      "exampleSentence": "明日、学校で試験を行います。",
+      "exampleSentenceMean": "내일 학교에서 시험을 실시합니다."
+    },
+    {
+      "word": "おこられる",
+      "mean": "혼나다; 꾸중을 듣다",
+      "furigana": "おこられる",
+      "exampleSentence": "遅刻して、先生におこられました。",
+      "exampleSentenceMean": "지각해서 선생님께 혼났습니다."
+    },
+    {
+      "word": "おこる",
+      "mean": "화내다",
+      "furigana": "おこる",
+      "exampleSentence": "約束を忘れたので、友だちがおこっています。",
+      "exampleSentenceMean": "약속을 잊어서 친구가 화나 있습니다."
+    },
+    {
+      "word": "おじいさん",
+      "mean": "할아버지",
+      "furigana": "おじいさん",
+      "exampleSentence": "おじいさんは毎朝散歩をします。",
+      "exampleSentenceMean": "할아버지는 매일 아침 산책하십니다."
+    },
+    {
+      "word": "おしいれ",
+      "mean": "벽장",
+      "furigana": "おしいれ",
+      "exampleSentence": "ふとんをおしいれに入れます。",
+      "exampleSentenceMean": "이불을 벽장에 넣습니다."
+    },
+    {
+      "word": "教える",
+      "mean": "가르치다; 알려 주다",
+      "furigana": "おしえる",
+      "exampleSentence": "先生が日本語を教えてくれます。",
+      "exampleSentenceMean": "선생님이 일본어를 가르쳐 주십니다."
+    },
+    {
+      "word": "お知らせ",
+      "mean": "알림; 안내",
+      "furigana": "おしらせ",
+      "exampleSentence": "学校からのお知らせを読みました。",
+      "exampleSentenceMean": "학교에서 온 안내문을 읽었습니다."
+    },
+    {
+      "word": "押す",
+      "mean": "누르다; 밀다",
+      "furigana": "おす",
+      "exampleSentence": "このボタンを押してください。",
+      "exampleSentenceMean": "이 버튼을 눌러 주세요."
+    },
+    {
+      "word": "遅い",
+      "mean": "늦다; 느리다",
+      "furigana": "おそい",
+      "exampleSentence": "今日は帰りが遅いです。",
+      "exampleSentenceMean": "오늘은 귀가가 늦습니다."
+    },
+    {
+      "word": "お宅",
+      "mean": "댁; 상대방의 집",
+      "furigana": "おたく",
+      "exampleSentence": "明日、お宅にうかがってもいいですか。",
+      "exampleSentenceMean": "내일 댁에 방문해도 될까요?"
+    },
+    {
+      "word": "お茶",
+      "mean": "차",
+      "furigana": "おちゃ",
+      "exampleSentence": "食事の後でお茶を飲みます。",
+      "exampleSentenceMean": "식사 후에 차를 마십니다."
+    },
+    {
+      "word": "落ちる",
+      "mean": "떨어지다",
+      "furigana": "おちる",
+      "exampleSentence": "木から葉が落ちました。",
+      "exampleSentenceMean": "나무에서 잎이 떨어졌습니다."
+    },
+    {
+      "word": "おつり",
+      "mean": "거스름돈",
+      "furigana": "おつり",
+      "exampleSentence": "おつりを財布に入れました。",
+      "exampleSentenceMean": "거스름돈을 지갑에 넣었습니다."
+    },
+    {
+      "word": "音",
+      "mean": "소리",
+      "furigana": "おと",
+      "exampleSentence": "隣の部屋からピアノの音が聞こえます。",
+      "exampleSentenceMean": "옆방에서 피아노 소리가 들립니다."
+    },
+    {
+      "word": "お父さん",
+      "mean": "아버지; 아빠",
+      "furigana": "おとうさん",
+      "exampleSentence": "お父さんは今、新聞を読んでいます。",
+      "exampleSentenceMean": "아버지는 지금 신문을 읽고 계십니다."
+    },
+    {
+      "word": "弟",
+      "mean": "남동생",
+      "furigana": "おとうと",
+      "exampleSentence": "弟は高校生です。",
+      "exampleSentenceMean": "남동생은 고등학생입니다."
+    },
+    {
+      "word": "男の子",
+      "mean": "남자아이",
+      "furigana": "おとこのこ",
+      "exampleSentence": "公園で男の子が遊んでいます。",
+      "exampleSentenceMean": "공원에서 남자아이가 놀고 있습니다."
+    },
+    {
+      "word": "男の人",
+      "mean": "남자; 남성",
+      "furigana": "おとこのひと",
+      "exampleSentence": "あの男の人は私の先生です。",
+      "exampleSentenceMean": "저 남자는 제 선생님입니다."
+    },
+    {
+      "word": "落とす",
+      "mean": "떨어뜨리다; 잃어버리다",
+      "furigana": "おとす",
+      "exampleSentence": "道でかぎを落としてしまいました。",
+      "exampleSentenceMean": "길에서 열쇠를 떨어뜨렸습니다."
+    },
+    {
+      "word": "おととい",
+      "mean": "그저께",
+      "furigana": "おととい",
+      "exampleSentence": "おととい、映画を見ました。",
+      "exampleSentenceMean": "그저께 영화를 보았습니다."
+    },
+    {
+      "word": "おととし",
+      "mean": "재작년",
+      "furigana": "おととし",
+      "exampleSentence": "おととし、日本へ行きました。",
+      "exampleSentenceMean": "재작년에 일본에 갔습니다."
+    },
+    {
+      "word": "大人",
+      "mean": "어른",
+      "furigana": "おとな",
+      "exampleSentence": "この映画の料金は大人千円です。",
+      "exampleSentenceMean": "이 영화의 요금은 성인 천 엔입니다."
+    },
+    {
+      "word": "大人しい",
+      "mean": "얌전하다; 온순하다",
+      "furigana": "おとなしい",
+      "exampleSentence": "この犬は大人しいです。",
+      "exampleSentenceMean": "이 개는 온순합니다."
+    },
+    {
+      "word": "おどる",
+      "mean": "춤추다",
+      "furigana": "おどる",
+      "exampleSentence": "音楽に合わせておどります。",
+      "exampleSentenceMean": "음악에 맞추어 춤춥니다."
+    },
+    {
+      "word": "おどろく",
+      "mean": "놀라다",
+      "furigana": "おどろく",
+      "exampleSentence": "大きな音におどろきました。",
+      "exampleSentenceMean": "큰 소리에 놀랐습니다."
+    },
+    {
+      "word": "お腹",
+      "mean": "배; 복부",
+      "furigana": "おなか",
+      "exampleSentence": "お腹がすいたので、ご飯を食べます。",
+      "exampleSentenceMean": "배가 고파서 밥을 먹습니다."
+    },
+    {
+      "word": "同じだ",
+      "mean": "같다",
+      "furigana": "おなじだ",
+      "exampleSentence": "私のかばんは姉のかばんと同じです。",
+      "exampleSentenceMean": "제 가방은 언니의 가방과 같습니다."
+    },
+    {
+      "word": "お兄さん",
+      "mean": "형; 오빠; 상대방의 형·오빠",
+      "furigana": "おにいさん",
+      "exampleSentence": "お兄さんはどこで働いていますか。",
+      "exampleSentenceMean": "형은 어디서 일하나요?"
+    },
+    {
+      "word": "お姉さん",
+      "mean": "누나; 언니; 상대방의 누나·언니",
+      "furigana": "おねえさん",
+      "exampleSentence": "お姉さんはお元気ですか。",
+      "exampleSentenceMean": "언니는 잘 지내시나요?"
+    },
+    {
+      "word": "おねがい",
+      "mean": "부탁",
+      "furigana": "おねがい",
+      "exampleSentence": "一つおねがいがあります。",
+      "exampleSentenceMean": "부탁이 하나 있습니다."
+    },
+    {
+      "word": "おばあさん",
+      "mean": "할머니",
+      "furigana": "おばあさん",
+      "exampleSentence": "おばあさんとお茶を飲みました。",
+      "exampleSentenceMean": "할머니와 차를 마셨습니다."
+    },
+    {
+      "word": "おはし",
+      "mean": "젓가락",
+      "furigana": "おはし",
+      "exampleSentence": "おはしでご飯を食べます。",
+      "exampleSentenceMean": "젓가락으로 밥을 먹습니다."
+    },
+    {
+      "word": "お風呂",
+      "mean": "목욕; 욕조",
+      "furigana": "おふろ",
+      "exampleSentence": "寝る前にお風呂に入ります。",
+      "exampleSentenceMean": "자기 전에 목욕합니다."
+    },
+    {
+      "word": "お弁当",
+      "mean": "도시락",
+      "furigana": "おべんとう",
+      "exampleSentence": "公園でお弁当を食べました。",
+      "exampleSentenceMean": "공원에서 도시락을 먹었습니다."
+    },
+    {
+      "word": "覚える",
+      "mean": "외우다; 기억하다",
+      "furigana": "おぼえる",
+      "exampleSentence": "毎日、新しい単語を覚えます。",
+      "exampleSentenceMean": "매일 새 단어를 외웁니다."
+    },
+    {
+      "word": "おみまい",
+      "mean": "병문안; 위문",
+      "furigana": "おみまい",
+      "exampleSentence": "友だちのおみまいに行きました。",
+      "exampleSentenceMean": "친구의 병문안을 갔습니다."
+    },
+    {
+      "word": "おみやげ",
+      "mean": "여행 선물; 토산품",
+      "furigana": "おみやげ",
+      "exampleSentence": "家族におみやげを買いました。",
+      "exampleSentenceMean": "가족에게 줄 여행 선물을 샀습니다."
+    },
+    {
+      "word": "重い",
+      "mean": "무겁다",
+      "furigana": "おもい",
+      "exampleSentence": "この荷物は重いです。",
+      "exampleSentenceMean": "이 짐은 무겁습니다."
+    },
+    {
+      "word": "思い出",
+      "mean": "추억",
+      "furigana": "おもいで",
+      "exampleSentence": "旅行の思い出を話しました。",
+      "exampleSentenceMean": "여행의 추억을 이야기했습니다."
+    },
+    {
+      "word": "面白い",
+      "mean": "재미있다",
+      "furigana": "おもしろい",
+      "exampleSentence": "この本は面白いです。",
+      "exampleSentenceMean": "이 책은 재미있습니다."
+    },
+    {
+      "word": "親",
+      "mean": "부모",
+      "furigana": "おや",
+      "exampleSentence": "親に電話をしました。",
+      "exampleSentenceMean": "부모님께 전화를 했습니다."
+    },
+    {
+      "word": "親指",
+      "mean": "엄지손가락",
+      "furigana": "おやゆび",
+      "exampleSentence": "親指をけがしました。",
+      "exampleSentenceMean": "엄지손가락을 다쳤습니다."
+    },
+    {
+      "word": "泳ぐ",
+      "mean": "헤엄치다; 수영하다",
+      "furigana": "およぐ",
+      "exampleSentence": "夏は海で泳ぎます。",
+      "exampleSentenceMean": "여름에는 바다에서 수영합니다."
+    },
+    {
+      "word": "降りる",
+      "mean": "내리다",
+      "furigana": "おりる",
+      "exampleSentence": "次の駅で降ります。",
+      "exampleSentenceMean": "다음 역에서 내립니다."
+    },
+    {
+      "word": "折る",
+      "mean": "접다; 꺾다",
+      "furigana": "おる",
+      "exampleSentence": "紙を半分に折ります。",
+      "exampleSentenceMean": "종이를 반으로 접습니다."
+    },
+    {
+      "word": "おれい",
+      "mean": "감사; 사례",
+      "furigana": "おれい",
+      "exampleSentence": "先生におれいの手紙を書きました。",
+      "exampleSentenceMean": "선생님께 감사 편지를 썼습니다."
+    },
+    {
+      "word": "終わる",
+      "mean": "끝나다",
+      "furigana": "おわる",
+      "exampleSentence": "授業は三時に終わります。",
+      "exampleSentenceMean": "수업은 세 시에 끝납니다."
+    },
+    {
+      "word": "音楽",
+      "mean": "음악",
+      "furigana": "おんがく",
+      "exampleSentence": "音楽を聞きながら歩きます。",
+      "exampleSentenceMean": "음악을 들으면서 걷습니다."
+    },
+    {
+      "word": "女の子",
+      "mean": "여자아이",
+      "furigana": "おんなのこ",
+      "exampleSentence": "女の子が花を見ています。",
+      "exampleSentenceMean": "여자아이가 꽃을 보고 있습니다."
+    },
+    {
+      "word": "女の人",
+      "mean": "여자; 여성",
+      "furigana": "おんなのひと",
+      "exampleSentence": "あの女の人は私の母です。",
+      "exampleSentenceMean": "저 여성은 제 어머니입니다."
+    }
+  ]
+}
