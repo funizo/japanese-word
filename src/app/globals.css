@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
-
 :root {
   color-scheme: light;
   --canvas: #f5f7fb;
@@ -69,5 +68,26 @@ body {
   .safe-area {
     padding-left: max(2rem, env(safe-area-inset-left));
     padding-right: max(2rem, env(safe-area-inset-right));
+  }
+}
+
+@layer components {
+  .primary-button {
+    @apply inline-flex min-h-11 items-center justify-center rounded-xl bg-accent px-5 py-3 text-sm font-semibold text-surface hover:opacity-85 disabled:opacity-50;
+  }
+  .secondary-button {
+    @apply inline-flex min-h-11 items-center justify-center rounded-xl border border-line bg-surface px-5 py-3 text-sm font-semibold hover:border-accent disabled:opacity-50;
+  }
+  .panel {
+    @apply rounded-3xl border border-line bg-surface p-6 sm:p-8;
+  }
+  .eyebrow {
+    @apply text-sm font-semibold tracking-wide text-accent;
+  }
+  .nav-link {
+    @apply inline-flex min-h-11 items-center hover:text-accent;
+  }
+  .form-input {
+    @apply mt-2 block min-h-12 w-full rounded-xl border border-line bg-canvas px-4 py-3;
   }
 }

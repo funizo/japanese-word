@@ -1,79 +1,52 @@
+﻿import Link from "next/link";
 import { AppShell } from "@/components/layout/app-shell";
 import { WordPreview } from "@/components/word-preview";
 
 export default function Home() {
   return (
     <AppShell>
-      <div className="mb-8 flex flex-col gap-4 sm:mb-10 sm:flex-row sm:items-end sm:justify-between">
+      <section className="grid items-center gap-12 lg:grid-cols-2">
         <div>
-          <p className="mb-3 text-sm font-semibold tracking-wide text-accent">
-            나만의 작은 배움
-          </p>
-          <h1 className="text-3xl leading-tight font-bold tracking-tight sm:text-4xl">
-            나의 일본어 노트<span className="text-accent">.</span>
+          <p className="eyebrow">10분이면 충분.</p>
+          <h1 className="mt-5 text-4xl leading-tight font-bold tracking-tight sm:text-6xl">
+            10分,十分
+            <br />
+            <span className="text-accent">일본어 습관.</span>
           </h1>
-          <p className="mt-4 text-base leading-relaxed text-muted">
-            한 단어씩, 천천히 쌓아가요.
+          <p className="mt-6 text-lg leading-8 text-muted">
+            외우고, 저장하고, 다시 만나세요.
+            <br />
+            나만의 속도로 일본어 단어를 차곡차곡 쌓아가요.
           </p>
+          <div className="mt-8 flex flex-wrap gap-3">
+            <Link className="primary-button" href="/learn">
+              단어 학습 시작하기 →
+            </Link>
+            <Link className="secondary-button" href="/signup">
+              회원가입
+            </Link>
+          </div>
+          <p className="mt-4 text-sm text-muted">회원가입 없이도 예시 단어를 학습할 수 있어요.</p>
         </div>
-        <span className="w-fit rounded-full border border-line bg-surface px-3.5 py-2 text-sm text-muted">
-          첫 페이지
-        </span>
-      </div>
-
-      <div className="grid items-stretch gap-5 lg:grid-cols-[1.3fr_1fr] lg:gap-7">
         <WordPreview />
-        <section
-          aria-labelledby="workspace-title"
-          className="flex min-w-0 flex-col rounded-3xl border border-line bg-surface p-6 sm:p-8"
-        >
-          <div className="flex flex-wrap items-center justify-between gap-3">
-            <h2 id="workspace-title" className="text-base font-semibold">
-              나의 학습 공간
-            </h2>
-            <span className="rounded-full bg-canvas px-3 py-1 text-xs font-medium text-muted">
-              준비 중
-            </span>
-          </div>
-          <div className="flex flex-1 flex-col items-center justify-center py-14 text-center sm:py-16">
-            <div className="mb-6 flex size-16 items-center justify-center rounded-2xl border border-line bg-canvas text-accent">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="28"
-                height="28"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="1.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                aria-hidden="true"
-              >
-                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2Z" />
-                <path d="M9 7h6M9 11h4" />
-              </svg>
-            </div>
-            <h3 className="text-xl font-semibold tracking-tight">
-              아직 비어 있는 노트
-            </h3>
-            <p className="mt-3 max-w-64 text-base leading-7 text-muted">
-              앞으로 배울 단어들이
-              <br />
-              이곳에 차곡차곡 모일 거예요.
-            </p>
-          </div>
-          <p className="border-t border-line pt-5 text-center text-sm leading-6 text-muted">
-            새로운 배움을 위한 공간을 준비하고 있어요.
-          </p>
-        </section>
-      </div>
-
-      <div className="mt-8 flex flex-wrap items-center justify-between gap-3 border-t border-line pt-5 text-sm text-muted sm:mt-10">
-        <p>나의 속도로, 꾸준히.</p>
-        <p lang="ja" className="font-japanese tracking-widest">
-          一歩ずつ
-        </p>
-      </div>
+      </section>
+      <section className="mt-16 border-t border-line pt-10">
+        <p className="eyebrow">HOW IT WORKS</p>
+        <h2 className="mt-3 text-2xl font-bold">가볍게 시작하고, 꾸준히 기억해요</h2>
+        <div className="mt-7 grid gap-4 md:grid-cols-3">
+          {[
+            ["01", "한 장씩 배우기", "단어 카드로 발음과 뜻을 익혀요.", "/learn"],
+            ["02", "내 단어장에 담기", "다시 보고 싶은 단어를 저장해요.", "/saved"],
+            ["03", "나만의 학습 시작하기", "계정을 만들고 일본어 공부를 시작해요.", "/signup"],
+          ].map(([number, title, description, href]) => (
+            <Link key={number} href={href} className="panel hover:border-accent">
+              <span className="text-sm text-accent">{number}</span>
+              <h3 className="mt-5 text-lg font-bold">{title}↗</h3>
+              <p className="mt-2 text-muted">{description}</p>
+            </Link>
+          ))}
+        </div>
+      </section>
     </AppShell>
   );
 }

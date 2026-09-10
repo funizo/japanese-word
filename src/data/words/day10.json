@@ -1,0 +1,355 @@
+{
+  "day": "day10",
+  "words": [
+    {
+      "word": "写真",
+      "mean": "사진",
+      "furigana": "しゃしん",
+      "exampleSentence": "旅行の写真を見せてください。",
+      "exampleSentenceMean": "여행 사진을 보여 주세요."
+    },
+    {
+      "word": "社長",
+      "mean": "사장",
+      "furigana": "しゃちょう",
+      "exampleSentence": "社長は今、会議中です。",
+      "exampleSentenceMean": "사장님은 지금 회의 중입니다."
+    },
+    {
+      "word": "ジャム",
+      "mean": "잼",
+      "furigana": "じゃむ",
+      "exampleSentence": "パンにジャムを塗ります。",
+      "exampleSentenceMean": "빵에 잼을 바릅니다."
+    },
+    {
+      "word": "シャワー",
+      "mean": "샤워",
+      "furigana": "しゃわー",
+      "exampleSentence": "朝、シャワーを浴びます。",
+      "exampleSentenceMean": "아침에 샤워를 합니다."
+    },
+    {
+      "word": "自由",
+      "mean": "자유",
+      "furigana": "じゆう",
+      "exampleSentence": "午後は自由な時間があります。",
+      "exampleSentenceMean": "오후에는 자유 시간이 있습니다."
+    },
+    {
+      "word": "習慣",
+      "mean": "습관",
+      "furigana": "しゅうかん",
+      "exampleSentence": "毎朝歩く習慣があります。",
+      "exampleSentenceMean": "매일 아침 걷는 습관이 있습니다."
+    },
+    {
+      "word": "住所",
+      "mean": "주소",
+      "furigana": "じゅうしょ",
+      "exampleSentence": "ここに住所を書いてください。",
+      "exampleSentenceMean": "여기에 주소를 써 주세요."
+    },
+    {
+      "word": "ジュース",
+      "mean": "주스",
+      "furigana": "じゅーす",
+      "exampleSentence": "りんごのジュースを飲みます。",
+      "exampleSentenceMean": "사과 주스를 마십니다."
+    },
+    {
+      "word": "十分だ",
+      "mean": "충분하다",
+      "furigana": "じゅうぶんだ",
+      "exampleSentence": "食べ物は十分です。",
+      "exampleSentenceMean": "먹을 것은 충분합니다."
+    },
+    {
+      "word": "授業",
+      "mean": "수업",
+      "furigana": "じゅぎょう",
+      "exampleSentence": "授業は九時に始まります。",
+      "exampleSentenceMean": "수업은 아홉 시에 시작됩니다."
+    },
+    {
+      "word": "宿題",
+      "mean": "숙제",
+      "furigana": "しゅくだい",
+      "exampleSentence": "夕食の前に宿題をします。",
+      "exampleSentenceMean": "저녁 식사 전에 숙제를 합니다."
+    },
+    {
+      "word": "出席",
+      "mean": "출석; 참석",
+      "furigana": "しゅっせき",
+      "exampleSentence": "明日の会議に出席します。",
+      "exampleSentenceMean": "내일 회의에 참석합니다."
+    },
+    {
+      "word": "出発",
+      "mean": "출발",
+      "furigana": "しゅっぱつ",
+      "exampleSentence": "バスは七時に出発します。",
+      "exampleSentenceMean": "버스는 일곱 시에 출발합니다."
+    },
+    {
+      "word": "趣味",
+      "mean": "취미",
+      "furigana": "しゅみ",
+      "exampleSentence": "私の趣味は読書です。",
+      "exampleSentenceMean": "제 취미는 독서입니다."
+    },
+    {
+      "word": "しゅうかん",
+      "mean": "~주간; 주 단위의 기간(週間)",
+      "furigana": "しゅうかん",
+      "exampleSentence": "二しゅうかん、日本にいました。",
+      "exampleSentenceMean": "일본에 2주간 있었습니다."
+    },
+    {
+      "word": "じゅんび",
+      "mean": "준비",
+      "furigana": "じゅんび",
+      "exampleSentence": "旅行のじゅんびをします。",
+      "exampleSentenceMean": "여행 준비를 합니다."
+    },
+    {
+      "word": "紹介",
+      "mean": "소개",
+      "furigana": "しょうかい",
+      "exampleSentence": "友だちを紹介します。",
+      "exampleSentenceMean": "친구를 소개합니다."
+    },
+    {
+      "word": "小学校",
+      "mean": "초등학교",
+      "furigana": "しょうがっこう",
+      "exampleSentence": "弟は小学校に通っています。",
+      "exampleSentenceMean": "남동생은 초등학교에 다닙니다."
+    },
+    {
+      "word": "上手だ",
+      "mean": "잘하다; 능숙하다",
+      "furigana": "じょうずだ",
+      "exampleSentence": "姉は料理が上手です。",
+      "exampleSentenceMean": "언니는 요리를 잘합니다."
+    },
+    {
+      "word": "小説",
+      "mean": "소설",
+      "furigana": "しょうせつ",
+      "exampleSentence": "電車で小説を読みます。",
+      "exampleSentenceMean": "전철에서 소설을 읽습니다."
+    },
+    {
+      "word": "しょうたい",
+      "mean": "초대",
+      "furigana": "しょうたい",
+      "exampleSentence": "友だちを家にしょうたいしました。",
+      "exampleSentenceMean": "친구를 집에 초대했습니다."
+    },
+    {
+      "word": "商品",
+      "mean": "상품",
+      "furigana": "しょうひん",
+      "exampleSentence": "この商品は人気があります。",
+      "exampleSentenceMean": "이 상품은 인기가 있습니다."
+    },
+    {
+      "word": "丈夫だ",
+      "mean": "튼튼하다; 건강하다",
+      "furigana": "じょうぶだ",
+      "exampleSentence": "このかばんは丈夫です。",
+      "exampleSentenceMean": "이 가방은 튼튼합니다."
+    },
+    {
+      "word": "情報",
+      "mean": "정보",
+      "furigana": "じょうほう",
+      "exampleSentence": "旅行の情報を集めます。",
+      "exampleSentenceMean": "여행 정보를 모읍니다."
+    },
+    {
+      "word": "しょうゆ",
+      "mean": "간장",
+      "furigana": "しょうゆ",
+      "exampleSentence": "料理にしょうゆを入れます。",
+      "exampleSentenceMean": "요리에 간장을 넣습니다."
+    },
+    {
+      "word": "将来",
+      "mean": "장래; 미래",
+      "furigana": "しょうらい",
+      "exampleSentence": "将来は教師になりたいです。",
+      "exampleSentenceMean": "장래에는 교사가 되고 싶습니다."
+    },
+    {
+      "word": "食事",
+      "mean": "식사",
+      "furigana": "しょくじ",
+      "exampleSentence": "家族と食事をします。",
+      "exampleSentenceMean": "가족과 식사합니다."
+    },
+    {
+      "word": "食堂",
+      "mean": "식당",
+      "furigana": "しょくどう",
+      "exampleSentence": "学校の食堂で昼ご飯を食べます。",
+      "exampleSentenceMean": "학교 식당에서 점심을 먹습니다."
+    },
+    {
+      "word": "食品",
+      "mean": "식품",
+      "furigana": "しょくひん",
+      "exampleSentence": "冷凍食品を買いました。",
+      "exampleSentenceMean": "냉동식품을 샀습니다."
+    },
+    {
+      "word": "植物",
+      "mean": "식물",
+      "furigana": "しょくぶつ",
+      "exampleSentence": "毎朝、植物に水をあげます。",
+      "exampleSentenceMean": "매일 아침 식물에 물을 줍니다."
+    },
+    {
+      "word": "食料品",
+      "mean": "식료품",
+      "furigana": "しょくりょうひん",
+      "exampleSentence": "スーパーで食料品を買います。",
+      "exampleSentenceMean": "슈퍼마켓에서 식료품을 삽니다."
+    },
+    {
+      "word": "女性",
+      "mean": "여성",
+      "furigana": "じょせい",
+      "exampleSentence": "あの女性は私の先生です。",
+      "exampleSentenceMean": "저 여성은 제 선생님입니다."
+    },
+    {
+      "word": "しょるい",
+      "mean": "서류",
+      "furigana": "しょるい",
+      "exampleSentence": "しょるいをかばんに入れます。",
+      "exampleSentenceMean": "서류를 가방에 넣습니다."
+    },
+    {
+      "word": "調べる",
+      "mean": "조사하다; 찾아보다",
+      "furigana": "しらべる",
+      "exampleSentence": "電車の時間を調べます。",
+      "exampleSentenceMean": "전철 시간을 알아봅니다."
+    },
+    {
+      "word": "知る",
+      "mean": "알다",
+      "furigana": "しる",
+      "exampleSentence": "私はその人を知っています。",
+      "exampleSentenceMean": "저는 그 사람을 알고 있습니다."
+    },
+    {
+      "word": "白",
+      "mean": "흰색",
+      "furigana": "しろ",
+      "exampleSentence": "白のシャツを選びました。",
+      "exampleSentenceMean": "흰색 셔츠를 골랐습니다."
+    },
+    {
+      "word": "白い",
+      "mean": "희다",
+      "furigana": "しろい",
+      "exampleSentence": "白い花が咲いています。",
+      "exampleSentenceMean": "흰 꽃이 피어 있습니다."
+    },
+    {
+      "word": "信号",
+      "mean": "신호; 신호등",
+      "furigana": "しんごう",
+      "exampleSentence": "信号が青になりました。",
+      "exampleSentenceMean": "신호등이 초록색으로 바뀌었습니다."
+    },
+    {
+      "word": "人口",
+      "mean": "인구",
+      "furigana": "じんこう",
+      "exampleSentence": "この市の人口は増えています。",
+      "exampleSentenceMean": "이 시의 인구는 늘고 있습니다."
+    },
+    {
+      "word": "親切だ",
+      "mean": "친절하다",
+      "furigana": "しんせつだ",
+      "exampleSentence": "あの店員は親切です。",
+      "exampleSentenceMean": "저 점원은 친절합니다."
+    },
+    {
+      "word": "心配",
+      "mean": "걱정",
+      "furigana": "しんぱい",
+      "exampleSentence": "母は私の体を心配しています。",
+      "exampleSentenceMean": "어머니는 제 몸을 걱정하고 계십니다."
+    },
+    {
+      "word": "新聞",
+      "mean": "신문",
+      "furigana": "しんぶん",
+      "exampleSentence": "父は毎朝新聞を読みます。",
+      "exampleSentenceMean": "아버지는 매일 아침 신문을 읽으십니다."
+    },
+    {
+      "word": "水泳",
+      "mean": "수영",
+      "furigana": "すいえい",
+      "exampleSentence": "水泳を習っています。",
+      "exampleSentenceMean": "수영을 배우고 있습니다."
+    },
+    {
+      "word": "すいか",
+      "mean": "수박",
+      "furigana": "すいか",
+      "exampleSentence": "夏にすいかを食べます。",
+      "exampleSentenceMean": "여름에 수박을 먹습니다."
+    },
+    {
+      "word": "スイッチ",
+      "mean": "스위치",
+      "furigana": "すいっち",
+      "exampleSentence": "スイッチを押してください。",
+      "exampleSentenceMean": "스위치를 눌러 주세요."
+    },
+    {
+      "word": "水道",
+      "mean": "수도",
+      "furigana": "すいどう",
+      "exampleSentence": "水道の水をコップに入れます。",
+      "exampleSentenceMean": "수돗물을 컵에 담습니다."
+    },
+    {
+      "word": "水よう日",
+      "mean": "수요일",
+      "furigana": "すいようび",
+      "exampleSentence": "水よう日は学校が休みです。",
+      "exampleSentenceMean": "수요일은 학교가 쉬는 날입니다."
+    },
+    {
+      "word": "すう",
+      "mean": "피우다; 들이마시다; 빨다",
+      "furigana": "すう",
+      "exampleSentence": "父はたばこをすいません。",
+      "exampleSentenceMean": "아버지는 담배를 피우지 않으십니다."
+    },
+    {
+      "word": "スーツ",
+      "mean": "정장; 양복",
+      "furigana": "すーつ",
+      "exampleSentence": "仕事でスーツを着ます。",
+      "exampleSentenceMean": "일할 때 정장을 입습니다."
+    },
+    {
+      "word": "スーパー",
+      "mean": "슈퍼마켓",
+      "furigana": "すーぱー",
+      "exampleSentence": "スーパーで野菜を買います。",
+      "exampleSentenceMean": "슈퍼마켓에서 채소를 삽니다."
+    }
+  ]
+}

@@ -1,0 +1,355 @@
+{
+  "day": "day14",
+  "words": [
+    {
+      "word": "電話",
+      "mean": "전화",
+      "furigana": "でんわ",
+      "exampleSentence": "母に電話をします。",
+      "exampleSentenceMean": "어머니께 전화를 합니다."
+    },
+    {
+      "word": "ドア",
+      "mean": "문",
+      "furigana": "どあ",
+      "exampleSentence": "ドアを開けてください。",
+      "exampleSentenceMean": "문을 열어 주세요."
+    },
+    {
+      "word": "どう",
+      "mean": "어떻게; 어떠한지",
+      "furigana": "どう",
+      "exampleSentence": "日本の生活はどうですか。",
+      "exampleSentenceMean": "일본 생활은 어떤가요?"
+    },
+    {
+      "word": "どうして",
+      "mean": "왜; 어째서",
+      "furigana": "どうして",
+      "exampleSentence": "どうして遅れたのですか。",
+      "exampleSentenceMean": "왜 늦었나요?"
+    },
+    {
+      "word": "動物",
+      "mean": "동물",
+      "furigana": "どうぶつ",
+      "exampleSentence": "動物の写真を撮りました。",
+      "exampleSentenceMean": "동물 사진을 찍었습니다."
+    },
+    {
+      "word": "動物園",
+      "mean": "동물원",
+      "furigana": "どうぶつえん",
+      "exampleSentence": "日曜日に動物園へ行きます。",
+      "exampleSentenceMean": "일요일에 동물원에 갑니다."
+    },
+    {
+      "word": "どうやって",
+      "mean": "어떻게; 무슨 방법으로",
+      "furigana": "どうやって",
+      "exampleSentence": "駅までどうやって行きますか。",
+      "exampleSentenceMean": "역까지 어떻게 가나요?"
+    },
+    {
+      "word": "遠い",
+      "mean": "멀다",
+      "furigana": "とおい",
+      "exampleSentence": "学校は家から遠いです。",
+      "exampleSentenceMean": "학교는 집에서 멉니다."
+    },
+    {
+      "word": "通る",
+      "mean": "지나다; 통과하다",
+      "furigana": "とおる",
+      "exampleSentence": "毎朝この道を通ります。",
+      "exampleSentenceMean": "매일 아침 이 길을 지납니다."
+    },
+    {
+      "word": "都会",
+      "mean": "도시; 도회지",
+      "furigana": "とかい",
+      "exampleSentence": "姉は都会で働いています。",
+      "exampleSentenceMean": "언니는 도시에서 일하고 있습니다."
+    },
+    {
+      "word": "時",
+      "mean": "때; 시간",
+      "furigana": "とき",
+      "exampleSentence": "暇な時、本を読みます。",
+      "exampleSentenceMean": "한가할 때 책을 읽습니다."
+    },
+    {
+      "word": "時々",
+      "mean": "가끔; 때때로",
+      "furigana": "ときどき",
+      "exampleSentence": "時々、映画を見に行きます。",
+      "exampleSentenceMean": "가끔 영화를 보러 갑니다."
+    },
+    {
+      "word": "どきどき",
+      "mean": "두근두근",
+      "furigana": "どきどき",
+      "exampleSentence": "試験の前はどきどきします。",
+      "exampleSentenceMean": "시험 전에는 가슴이 두근거립니다."
+    },
+    {
+      "word": "とくに",
+      "mean": "특히",
+      "furigana": "とくに",
+      "exampleSentence": "果物の中では、とくにりんごが好きです。",
+      "exampleSentenceMean": "과일 중에서는 특히 사과를 좋아합니다."
+    },
+    {
+      "word": "特別だ",
+      "mean": "특별하다",
+      "furigana": "とくべつだ",
+      "exampleSentence": "今日は私にとって特別な日です。",
+      "exampleSentenceMean": "오늘은 저에게 특별한 날입니다."
+    },
+    {
+      "word": "時計",
+      "mean": "시계",
+      "furigana": "とけい",
+      "exampleSentence": "この時計は少し進んでいます。",
+      "exampleSentenceMean": "이 시계는 조금 빠릅니다."
+    },
+    {
+      "word": "ところ",
+      "mean": "곳; 장소",
+      "furigana": "ところ",
+      "exampleSentence": "静かなところで勉強したいです。",
+      "exampleSentenceMean": "조용한 곳에서 공부하고 싶습니다."
+    },
+    {
+      "word": "図書館",
+      "mean": "도서관",
+      "furigana": "としょかん",
+      "exampleSentence": "図書館で本を借ります。",
+      "exampleSentenceMean": "도서관에서 책을 빌립니다."
+    },
+    {
+      "word": "閉じる",
+      "mean": "닫다; 감다",
+      "furigana": "とじる",
+      "exampleSentence": "本を閉じてください。",
+      "exampleSentenceMean": "책을 덮어 주세요."
+    },
+    {
+      "word": "とちゅう",
+      "mean": "도중; 중간",
+      "furigana": "とちゅう",
+      "exampleSentence": "帰るとちゅうで雨が降りました。",
+      "exampleSentenceMean": "돌아가는 도중에 비가 왔습니다."
+    },
+    {
+      "word": "特急",
+      "mean": "특급",
+      "furigana": "とっきゅう",
+      "exampleSentence": "特急で京都へ行きます。",
+      "exampleSentenceMean": "특급열차로 교토에 갑니다."
+    },
+    {
+      "word": "とどく",
+      "mean": "도착하다; 닿다",
+      "furigana": "とどく",
+      "exampleSentence": "友だちから手紙がとどきました。",
+      "exampleSentenceMean": "친구에게서 편지가 도착했습니다."
+    },
+    {
+      "word": "とどける",
+      "mean": "배달하다; 전해 주다",
+      "furigana": "とどける",
+      "exampleSentence": "忘れ物を学校にとどけます。",
+      "exampleSentenceMean": "두고 간 물건을 학교에 가져다줍니다."
+    },
+    {
+      "word": "となり",
+      "mean": "옆; 이웃",
+      "furigana": "となり",
+      "exampleSentence": "私のとなりに座ってください。",
+      "exampleSentenceMean": "제 옆에 앉아 주세요."
+    },
+    {
+      "word": "飛ぶ",
+      "mean": "날다",
+      "furigana": "とぶ",
+      "exampleSentence": "鳥が空を飛んでいます。",
+      "exampleSentenceMean": "새가 하늘을 날고 있습니다."
+    },
+    {
+      "word": "止まる",
+      "mean": "멈추다; 서다",
+      "furigana": "とまる",
+      "exampleSentence": "バスが駅の前で止まります。",
+      "exampleSentenceMean": "버스가 역 앞에서 섭니다."
+    },
+    {
+      "word": "泊まる",
+      "mean": "묵다; 숙박하다",
+      "furigana": "とまる",
+      "exampleSentence": "今夜はホテルに泊まります。",
+      "exampleSentenceMean": "오늘 밤은 호텔에서 묵습니다."
+    },
+    {
+      "word": "止める",
+      "mean": "멈추다; 세우다",
+      "furigana": "とめる",
+      "exampleSentence": "ここに車を止めてください。",
+      "exampleSentenceMean": "여기에 차를 세워 주세요."
+    },
+    {
+      "word": "友だち",
+      "mean": "친구",
+      "furigana": "ともだち",
+      "exampleSentence": "友だちと昼ご飯を食べます。",
+      "exampleSentenceMean": "친구와 점심을 먹습니다."
+    },
+    {
+      "word": "土よう日",
+      "mean": "토요일",
+      "furigana": "どようび",
+      "exampleSentence": "土よう日は家で休みます。",
+      "exampleSentenceMean": "토요일에는 집에서 쉽니다."
+    },
+    {
+      "word": "ドライブ",
+      "mean": "드라이브",
+      "furigana": "どらいぶ",
+      "exampleSentence": "日曜日にドライブに行きます。",
+      "exampleSentenceMean": "일요일에 드라이브를 갑니다."
+    },
+    {
+      "word": "鳥",
+      "mean": "새",
+      "furigana": "とり",
+      "exampleSentence": "木の上に鳥がいます。",
+      "exampleSentenceMean": "나무 위에 새가 있습니다."
+    },
+    {
+      "word": "とりかえる",
+      "mean": "바꾸다; 교환하다",
+      "furigana": "とりかえる",
+      "exampleSentence": "古い電池を新しい電池にとりかえます。",
+      "exampleSentenceMean": "낡은 건전지를 새 건전지로 바꿉니다."
+    },
+    {
+      "word": "撮る",
+      "mean": "사진이나 영상을 찍다",
+      "furigana": "とる",
+      "exampleSentence": "家族の写真を撮ります。",
+      "exampleSentenceMean": "가족사진을 찍습니다."
+    },
+    {
+      "word": "なおる",
+      "mean": "낫다; 고쳐지다",
+      "furigana": "なおる",
+      "exampleSentence": "かぜがなおりました。",
+      "exampleSentenceMean": "감기가 나았습니다."
+    },
+    {
+      "word": "中",
+      "mean": "안; 속",
+      "furigana": "なか",
+      "exampleSentence": "箱の中に何がありますか。",
+      "exampleSentenceMean": "상자 안에 무엇이 있나요?"
+    },
+    {
+      "word": "長い",
+      "mean": "길다",
+      "furigana": "ながい",
+      "exampleSentence": "姉は髪が長いです。",
+      "exampleSentenceMean": "언니는 머리카락이 깁니다."
+    },
+    {
+      "word": "なかなか～ない",
+      "mean": "좀처럼 ~하지 않다",
+      "furigana": "なかなか～ない",
+      "exampleSentence": "バスがなかなか来ません。",
+      "exampleSentenceMean": "버스가 좀처럼 오지 않습니다."
+    },
+    {
+      "word": "泣く",
+      "mean": "울다",
+      "furigana": "なく",
+      "exampleSentence": "赤ちゃんが泣いています。",
+      "exampleSentenceMean": "아기가 울고 있습니다."
+    },
+    {
+      "word": "なくす",
+      "mean": "잃어버리다",
+      "furigana": "なくす",
+      "exampleSentence": "かぎをなくしてしまいました。",
+      "exampleSentenceMean": "열쇠를 잃어버렸습니다."
+    },
+    {
+      "word": "なぜ",
+      "mean": "왜",
+      "furigana": "なぜ",
+      "exampleSentence": "なぜ日本語を勉強していますか。",
+      "exampleSentenceMean": "왜 일본어를 공부하고 있나요?"
+    },
+    {
+      "word": "夏",
+      "mean": "여름",
+      "furigana": "なつ",
+      "exampleSentence": "夏は海で泳ぎます。",
+      "exampleSentenceMean": "여름에는 바다에서 수영합니다."
+    },
+    {
+      "word": "夏休み",
+      "mean": "여름 방학; 여름휴가",
+      "furigana": "なつやすみ",
+      "exampleSentence": "夏休みに旅行をします。",
+      "exampleSentenceMean": "여름 방학에 여행합니다."
+    },
+    {
+      "word": "名前",
+      "mean": "이름",
+      "furigana": "なまえ",
+      "exampleSentence": "名前を教えてください。",
+      "exampleSentenceMean": "이름을 알려 주세요."
+    },
+    {
+      "word": "習う",
+      "mean": "배우다",
+      "furigana": "ならう",
+      "exampleSentence": "毎週ピアノを習っています。",
+      "exampleSentenceMean": "매주 피아노를 배우고 있습니다."
+    },
+    {
+      "word": "ならぶ",
+      "mean": "줄 서다; 늘어서다",
+      "furigana": "ならぶ",
+      "exampleSentence": "店の前に人がならんでいます。",
+      "exampleSentenceMean": "가게 앞에 사람들이 줄 서 있습니다."
+    },
+    {
+      "word": "ならべる",
+      "mean": "늘어놓다; 나란히 놓다",
+      "furigana": "ならべる",
+      "exampleSentence": "机に本をならべます。",
+      "exampleSentenceMean": "책상에 책을 늘어놓습니다."
+    },
+    {
+      "word": "なる",
+      "mean": "되다",
+      "furigana": "なる",
+      "exampleSentence": "将来、医者になりたいです。",
+      "exampleSentenceMean": "장래에 의사가 되고 싶습니다."
+    },
+    {
+      "word": "なれる",
+      "mean": "익숙해지다",
+      "furigana": "なれる",
+      "exampleSentence": "新しい生活になれました。",
+      "exampleSentenceMean": "새 생활에 익숙해졌습니다."
+    },
+    {
+      "word": "にあう",
+      "mean": "어울리다",
+      "furigana": "にあう",
+      "exampleSentence": "その帽子はよくにあいますね。",
+      "exampleSentenceMean": "그 모자는 잘 어울리네요."
+    }
+  ]
+}
