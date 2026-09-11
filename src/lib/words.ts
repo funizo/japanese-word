@@ -40,11 +40,11 @@ export const days = [day01, day02, day03, day04, day05, day06, day07, day08, day
     translation: word.exampleSentenceMean,
   })),
 }));
-// Keep previously saved example words readable after switching to the real dataset.
+// 실제 데이터로 바꾼 뒤에도 예전에 저장한 예시 단어를 읽을 수 있게 유지합니다.
 export const words = [...days.flatMap((day) => day.words), ...legacyWords.map((word) => ({ ...word, day: "예시", example: "", translation: "" }))];
 export function parseSavedWords(value: string | null): string[] {
   const parsed: unknown = JSON.parse(value ?? "[]");
-  if (!Array.isArray(parsed) || !parsed.every((id) => typeof id === "string")) throw new Error("Invalid saved words");
+  if (!Array.isArray(parsed) || !parsed.every((id) => typeof id === "string")) throw new Error("저장한 단어 형식이 올바르지 않아요.");
   return [...new Set(parsed)].filter((id) => words.some((word) => word.id === id));
 }
 

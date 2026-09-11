@@ -1,52 +1,22 @@
 ﻿"use client";
 import Link from "next/link";
-import { useEffect, useId, useRef, useState, type PointerEvent } from "react";
-import { days, parseSavedWords, previewWord, swipeFeedback, words } from "@/lib/words";
+import { useId, useRef, useState, type PointerEvent } from "react";
+import { days, previewWord, swipeFeedback, words } from "@/lib/words";
 import { SpeechButton } from "@/components/speech-button";
-// ponytail: device-local wordbook; use account storage when cross-device sync is needed.
-const storageKey = "japanese-word:saved";
+import { useSavedWords } from "@/lib/use-saved-words";
 export function WordStudy({ savedOnly = false, preview = false, dayIndex = 0 }: { savedOnly?: boolean; preview?: boolean; dayIndex?: number }) {
   const swipeHelpId = useId();
-  const [saved, setSaved] = useState<string[]>([]);
-  const [ready, setReady] = useState(false);
-  const [error, setError] = useState("");
+  const { saved, ready, busy, error, account, updateSaved, importLocal, reload } = useSavedWords(!preview);
   const [index, setIndex] = useState(0);
   const [drag, setDrag] = useState({ distance: 0, width: 1 });
   const [dragging, setDragging] = useState(false);
   const [notice, setNotice] = useState("");
   const pointer = useRef<{ id: number; x: number; width: number } | null>(null);
-  useEffect(() => {
-    if (preview) return;
-    function read() {
-      try {
-        setSaved(parseSavedWords(localStorage.getItem(storageKey)));
-        setReady(true);
-        setError("");
-      } catch {
-        setReady(false);
-        setError("저장한 단어를 읽을 수 없어요. 브라우저 저장소 설정을 확인해 주세요.");
-      }
-    }
-    read();
-    window.addEventListener("storage", read);
-    return () => window.removeEventListener("storage", read);
-  }, [preview]);
-  function updateSaved(id: string, remove = false) {
-    try {
-      const current = parseSavedWords(localStorage.getItem(storageKey));
-      const next = remove ? current.filter((item) => item !== id) : [...new Set([...current, id])];
-      localStorage.setItem(storageKey, JSON.stringify(next));
-      setSaved(next);
-      setError("");
-      return true;
-    } catch {
-      setError("단어를 저장하지 못했어요. 브라우저 저장소 설정을 확인해 주세요.");
-      return false;
-    }
-  }
+  const deciding = useRef(false);
   const day = days[dayIndex];
   const word = preview ? previewWord : day.words[index];
-  function decide(action: string) {
+  async function decide(action: string) {
+    if (deciding.current || busy || !word) return;
     if (preview) {
       setNotice(
         action === "save" ? "저장 동작을 체험했어요. 실제로 저장되지는 않아요." : "아는 단어로 넘기기를 체험했어요.",
@@ -54,15 +24,17 @@ export function WordStudy({ savedOnly = false, preview = false, dayIndex = 0 }: 
       resetDrag();
       return;
     }
-    if (action === "save" && (!ready || !updateSaved(word.id))) {
-      resetDrag();
-      return;
-    }
-    setNotice(
-      action === "save" ? `${word.text}을(를) 단어장에 저장했어요.` : `${word.text}은(는) 아는 단어로 넘겼어요.`,
-    );
-    setIndex((current) => current + 1);
+    deciding.current = true;
     resetDrag();
+    try {
+      if (action === "save" && (!ready || !await updateSaved(word.id))) return;
+      setNotice(
+        action === "save" ? `${word.text}을(를) 단어장에 저장했어요.` : `${word.text}은(는) 아는 단어로 넘겼어요.`,
+      );
+      setIndex((current) => current + 1);
+    } finally {
+      deciding.current = false;
+    }
   }
   function resetDrag() {
     pointer.current = null;
@@ -85,7 +57,9 @@ export function WordStudy({ savedOnly = false, preview = false, dayIndex = 0 }: 
           <h1 className="mt-3 text-3xl font-bold sm:text-4xl">{savedOnly ? "내 단어장" : `${day.label} · 오늘도 한 단어씩`}</h1>
           <p className="mt-4 text-muted">
             {savedOnly
-              ? "저장한 단어를 다시 만나보세요. 단어장은 현재 브라우저에 저장돼요."
+              ? account
+                ? "저장한 단어를 다시 만나보세요. 같은 계정으로 로그인하면 다른 기기에서도 볼 수 있어요."
+                : "단어장은 현재 브라우저에 저장돼요. 로그인하면 계정 단어장을 사용할 수 있어요."
               : "카드를 왼쪽으로 밀면 아는 단어, 오른쪽으로 밀면 외우고 싶은 단어로 저장돼요."}
           </p>
         </>
@@ -94,8 +68,15 @@ export function WordStudy({ savedOnly = false, preview = false, dayIndex = 0 }: 
         <Link className="secondary-button mt-6" href="/learn">← Day 목록으로</Link>
       )}
       <p role="status" className="mt-4 min-h-5 text-sm text-muted">
-        {error || notice}
+        {error || (busy ? "단어장을 저장하는 중…" : notice)}
       </p>
+      {!preview && error && <button className="secondary-button mt-2" onClick={reload}>다시 불러오기</button>}
+      {savedOnly && account && (
+        <button className="secondary-button mt-2" disabled={!ready || busy} onClick={async () => {
+          setNotice("");
+          if (await importLocal()) setNotice("이 브라우저의 단어를 계정 단어장에 추가했어요. 기존 브라우저 단어장도 유지돼요.");
+        }}>이 브라우저의 단어 가져오기</button>
+      )}
       {savedOnly ? (
         <section className="mt-6" aria-label="저장한 단어">
           {!ready ? (
@@ -137,6 +118,7 @@ export function WordStudy({ savedOnly = false, preview = false, dayIndex = 0 }: 
                       )}
                       <button
                         className="secondary-button mt-6"
+                        disabled={!ready || busy}
                         onClick={() => updateSaved(item.id, true)}
                         aria-label={`${item.text} 저장 해제`}
                       >
@@ -192,7 +174,7 @@ export function WordStudy({ savedOnly = false, preview = false, dayIndex = 0 }: 
             }}
             aria-describedby={swipeHelpId}
             onPointerDown={(event) => {
-              if (!event.isPrimary || event.button !== 0 || pointer.current) return;
+              if (busy || deciding.current || !event.isPrimary || event.button !== 0 || pointer.current) return;
               pointer.current = { id: event.pointerId, x: event.clientX, width: event.currentTarget.offsetWidth };
               event.currentTarget.setPointerCapture(event.pointerId);
               setDragging(true);
@@ -230,10 +212,10 @@ export function WordStudy({ savedOnly = false, preview = false, dayIndex = 0 }: 
             )}
           </div>
           <div className="mt-5 flex flex-wrap justify-between gap-3">
-            <button className="secondary-button" onClick={() => decide("known")}>
+            <button className="secondary-button" disabled={busy} onClick={() => decide("known")}>
               ← 알고있어요
             </button>
-            <button className="primary-button" disabled={!preview && !ready} onClick={() => decide("save")}>
+            <button className="primary-button" disabled={!preview && (!ready || busy)} onClick={() => decide("save")}>
               몰랐어요 →
             </button>
           </div>
