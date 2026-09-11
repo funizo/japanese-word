@@ -1,9 +1,14 @@
 import { createClient, type SupabaseClient } from "@supabase/supabase-js";
+import type { Database } from "./database.types";
 
-let browserClient: SupabaseClient | undefined;
+let browserClient: SupabaseClient<Database> | undefined;
 
-/** 데이터 기능을 추가할 때 브라우저에서 호출하는 Supabase 클라이언트입니다. */
-export function getSupabaseClient(): SupabaseClient {
+export function isSupabaseConfigured(): boolean {
+  return Boolean(process.env.NEXT_PUBLIC_SUPABASE_URL && process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY);
+}
+
+/** 인증과 단어장 저장에 사용하는 브라우저 전용 클라이언트입니다. */
+export function getSupabaseClient(): SupabaseClient<Database> {
   if (typeof window === "undefined") {
     throw new Error("이 Supabase 클라이언트는 브라우저에서만 사용해 주세요.");
   }
@@ -17,6 +22,6 @@ export function getSupabaseClient(): SupabaseClient {
     );
   }
 
-  browserClient ??= createClient(url, publishableKey);
+  browserClient ??= createClient<Database>(url, publishableKey);
   return browserClient;
 }

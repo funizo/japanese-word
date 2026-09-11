@@ -1,6 +1,7 @@
 import Link from "next/link";
 import type { ReactNode } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
+import { AuthMenu } from "@/components/auth-menu";
 
 export function AppShell({ children }: { children: ReactNode }) {
   return (
@@ -41,12 +42,7 @@ export function AppShell({ children }: { children: ReactNode }) {
             <Link className="nav-link" href="/saved">
               내 단어장
             </Link>
-            <Link className="nav-link sm:ml-auto" href="/login">
-              로그인
-            </Link>
-            <Link className="nav-link text-accent" href="/signup">
-              회원가입
-            </Link>
+            <AuthMenu />
           </nav>
         </div>
       </header>
