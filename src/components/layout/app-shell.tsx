@@ -2,6 +2,7 @@ import Link from "next/link";
 import type { ReactNode } from "react";
 import { ThemeToggle } from "@/components/theme-toggle";
 import { AuthMenu } from "@/components/auth-menu";
+import { NavigationMenu } from "@/components/layout/navigation-menu";
 
 export function AppShell({ children }: { children: ReactNode }) {
   return (
@@ -14,7 +15,7 @@ export function AppShell({ children }: { children: ReactNode }) {
       </a>
 
       <header className="border-b border-line bg-surface pt-[env(safe-area-inset-top)]">
-        <div className="safe-area mx-auto flex min-h-20 w-full max-w-6xl flex-wrap items-center justify-between gap-4 py-3">
+        <div className="safe-area mx-auto flex min-h-20 w-full max-w-6xl items-center justify-between gap-3 py-3">
           <Link href="/" aria-label="japanese-word 홈" className="flex min-h-11 items-center gap-3 rounded-lg">
             <span
               aria-hidden="true"
@@ -25,25 +26,13 @@ export function AppShell({ children }: { children: ReactNode }) {
             </span>
             <span className="text-lg font-bold tracking-tight sm:text-xl">주분주분</span>
           </Link>
-          <div className="flex shrink-0 items-center gap-4">
+          <div className="flex shrink-0 items-center gap-2 sm:gap-4">
             <span className="hidden text-sm text-muted md:block">일상에 일본어 한 조각</span>
             <ThemeToggle />
+            <NavigationMenu>
+              <AuthMenu />
+            </NavigationMenu>
           </div>
-          <nav
-            aria-label="메인 메뉴"
-            className="flex w-full flex-wrap items-center gap-x-5 gap-y-2 border-t border-line pt-3 text-sm font-medium"
-          >
-            <Link className="nav-link" href="/">
-              서비스 소개
-            </Link>
-            <Link className="nav-link" href="/learn">
-              단어 학습
-            </Link>
-            <Link className="nav-link" href="/saved">
-              내 단어장
-            </Link>
-            <AuthMenu />
-          </nav>
         </div>
       </header>
 

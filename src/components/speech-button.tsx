@@ -2,7 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 
-export function SpeechButton({ text, label }: { text: string; label: string }) {
+export function SpeechButton({ text, label, hideTextInLabel = false }: { text: string; label: string; hideTextInLabel?: boolean }) {
   const [message, setMessage] = useState("");
   const utterance = useRef<SpeechSynthesisUtterance | null>(null);
 
@@ -60,7 +60,7 @@ export function SpeechButton({ text, label }: { text: string; label: string }) {
       <button
         type="button"
         className="min-h-11 cursor-pointer rounded-lg border border-current/30 px-3 py-2 text-sm hover:bg-current/10"
-        aria-label={`${label}: ${text}`}
+        aria-label={hideTextInLabel ? label : `${label}: ${text}`}
         onPointerDown={(event) => event.stopPropagation()}
         onClick={speak}
       >
