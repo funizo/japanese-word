@@ -1,0 +1,355 @@
+{
+  "day": "day22",
+  "words": [
+    {
+      "word": "確認",
+      "mean": "확인",
+      "furigana": "かくにん",
+      "exampleSentence": "送る前に、メールの内容をもう一度確認しました。",
+      "exampleSentenceMean": "보내기 전에 메일 내용을 한 번 더 확인했습니다."
+    },
+    {
+      "word": "判断",
+      "mean": "판단",
+      "furigana": "はんだん",
+      "exampleSentence": "値段だけで商品の良さを判断するのは難しいです。",
+      "exampleSentenceMean": "가격만으로 상품의 품질을 판단하기는 어렵습니다."
+    },
+    {
+      "word": "状況",
+      "mean": "상황",
+      "furigana": "じょうきょう",
+      "exampleSentence": "駅員に電車の運転状況を聞きました。",
+      "exampleSentenceMean": "역무원에게 열차 운행 상황을 물었습니다."
+    },
+    {
+      "word": "提案",
+      "mean": "제안",
+      "furigana": "ていあん",
+      "exampleSentence": "友だちに、電車で旅行することを提案しました。",
+      "exampleSentenceMean": "친구에게 기차로 여행할 것을 제안했습니다."
+    },
+    {
+      "word": "報告",
+      "mean": "보고",
+      "furigana": "ほうこく",
+      "exampleSentence": "仕事が終わったら、課長に報告してください。",
+      "exampleSentenceMean": "일이 끝나면 과장님께 보고해 주세요."
+    },
+    {
+      "word": "変更",
+      "mean": "변경",
+      "furigana": "へんこう",
+      "exampleSentence": "雨のため、試合の開始時間が変更されました。",
+      "exampleSentenceMean": "비 때문에 경기 시작 시간이 변경되었습니다."
+    },
+    {
+      "word": "解決",
+      "mean": "해결",
+      "furigana": "かいけつ",
+      "exampleSentence": "みんなで話し合って、問題を解決しました。",
+      "exampleSentenceMean": "모두 함께 의논해서 문제를 해결했습니다."
+    },
+    {
+      "word": "努力",
+      "mean": "노력",
+      "furigana": "どりょく",
+      "exampleSentence": "毎日少しずつ努力を続けることが大切です。",
+      "exampleSentenceMean": "매일 조금씩 꾸준히 노력하는 것이 중요합니다."
+    },
+    {
+      "word": "協力",
+      "mean": "협력",
+      "furigana": "きょうりょく",
+      "exampleSentence": "近所の人たちと協力して、公園を掃除しました。",
+      "exampleSentenceMean": "이웃들과 협력해서 공원을 청소했습니다."
+    },
+    {
+      "word": "責任",
+      "mean": "책임",
+      "furigana": "せきにん",
+      "exampleSentence": "自分の仕事には最後まで責任を持ちたいです。",
+      "exampleSentenceMean": "자신이 맡은 일에는 끝까지 책임을 지고 싶습니다."
+    },
+    {
+      "word": "目的",
+      "mean": "목적",
+      "furigana": "もくてき",
+      "exampleSentence": "今回の旅行の目的は、友だちに会うことです。",
+      "exampleSentenceMean": "이번 여행의 목적은 친구를 만나는 것입니다."
+    },
+    {
+      "word": "方法",
+      "mean": "방법",
+      "furigana": "ほうほう",
+      "exampleSentence": "もっと簡単に覚える方法を考えています。",
+      "exampleSentenceMean": "더 쉽게 외우는 방법을 생각하고 있습니다."
+    },
+    {
+      "word": "関係",
+      "mean": "관계",
+      "furigana": "かんけい",
+      "exampleSentence": "睡眠時間と健康には深い関係があります。",
+      "exampleSentenceMean": "수면 시간과 건강에는 깊은 관계가 있습니다."
+    },
+    {
+      "word": "環境",
+      "mean": "환경",
+      "furigana": "かんきょう",
+      "exampleSentence": "静かな環境で勉強すると、よく集中できます。",
+      "exampleSentenceMean": "조용한 환경에서 공부하면 집중이 잘됩니다."
+    },
+    {
+      "word": "技術",
+      "mean": "기술",
+      "furigana": "ぎじゅつ",
+      "exampleSentence": "この工場では、新しい技術を使っています。",
+      "exampleSentenceMean": "이 공장에서는 새로운 기술을 사용하고 있습니다."
+    },
+    {
+      "word": "能力",
+      "mean": "능력",
+      "furigana": "のうりょく",
+      "exampleSentence": "毎日の練習で、日本語を話す能力を伸ばしたいです。",
+      "exampleSentenceMean": "매일 연습해서 일본어로 말하는 능력을 기르고 싶습니다."
+    },
+    {
+      "word": "成績",
+      "mean": "성적",
+      "furigana": "せいせき",
+      "exampleSentence": "前の学期より数学の成績が上がりました。",
+      "exampleSentenceMean": "지난 학기보다 수학 성적이 올랐습니다."
+    },
+    {
+      "word": "条件",
+      "mean": "조건",
+      "furigana": "じょうけん",
+      "exampleSentence": "駅に近いことが、部屋を選ぶ条件です。",
+      "exampleSentenceMean": "역에서 가까운 것이 방을 고르는 조건입니다."
+    },
+    {
+      "word": "選択",
+      "mean": "선택",
+      "furigana": "せんたく",
+      "exampleSentence": "大学でどの授業を選択するか、まだ決めていません。",
+      "exampleSentenceMean": "대학에서 어떤 수업을 선택할지 아직 정하지 않았습니다."
+    },
+    {
+      "word": "比較",
+      "mean": "비교",
+      "furigana": "ひかく",
+      "exampleSentence": "二つのホテルの料金を比較してから予約しました。",
+      "exampleSentenceMean": "두 호텔의 요금을 비교한 뒤 예약했습니다."
+    },
+    {
+      "word": "感謝",
+      "mean": "감사",
+      "furigana": "かんしゃ",
+      "exampleSentence": "引っ越しを手伝ってくれた友だちに感謝しています。",
+      "exampleSentenceMean": "이사를 도와준 친구에게 감사하고 있습니다."
+    },
+    {
+      "word": "満足",
+      "mean": "만족",
+      "furigana": "まんぞく",
+      "exampleSentence": "この店は料理もサービスもよく、とても満足しました。",
+      "exampleSentenceMean": "이 가게는 음식도 서비스도 좋아서 매우 만족했습니다."
+    },
+    {
+      "word": "期待",
+      "mean": "기대",
+      "furigana": "きたい",
+      "exampleSentence": "好きな作家の新しい小説に期待しています。",
+      "exampleSentenceMean": "좋아하는 작가의 새 소설을 기대하고 있습니다."
+    },
+    {
+      "word": "不安",
+      "mean": "불안",
+      "furigana": "ふあん",
+      "exampleSentence": "初めて一人で海外へ行くので、少し不安です。",
+      "exampleSentenceMean": "처음으로 혼자 해외에 가기 때문에 조금 불안합니다."
+    },
+    {
+      "word": "印象",
+      "mean": "인상",
+      "furigana": "いんしょう",
+      "exampleSentence": "初めて会ったとき、優しそうな人だという印象を受けました。",
+      "exampleSentenceMean": "처음 만났을 때 다정해 보이는 사람이라는 인상을 받았습니다."
+    },
+    {
+      "word": "気付く",
+      "mean": "알아차리다; 깨닫다",
+      "furigana": "きづく",
+      "exampleSentence": "駅に着いてから、財布を忘れたことに気付きました。",
+      "exampleSentenceMean": "역에 도착한 뒤에 지갑을 두고 왔다는 것을 알아차렸습니다."
+    },
+    {
+      "word": "気に入る",
+      "mean": "마음에 들다",
+      "furigana": "きにいる",
+      "exampleSentence": "このかばんは色も形も気に入っています。",
+      "exampleSentenceMean": "이 가방은 색도 모양도 마음에 듭니다."
+    },
+    {
+      "word": "断る",
+      "mean": "거절하다",
+      "furigana": "ことわる",
+      "exampleSentence": "その日は用事があったので、友だちの誘いを断りました。",
+      "exampleSentenceMean": "그날은 볼일이 있어서 친구의 제안을 거절했습니다."
+    },
+    {
+      "word": "認める",
+      "mean": "인정하다",
+      "furigana": "みとめる",
+      "exampleSentence": "自分の間違いを認めて、すぐに謝りました。",
+      "exampleSentenceMean": "자신의 잘못을 인정하고 곧바로 사과했습니다."
+    },
+    {
+      "word": "伝わる",
+      "mean": "전해지다; 전달되다",
+      "furigana": "つたわる",
+      "exampleSentence": "手紙を読んで、友だちの優しい気持ちが伝わってきました。",
+      "exampleSentenceMean": "편지를 읽으니 친구의 따뜻한 마음이 전해졌습니다."
+    },
+    {
+      "word": "受け取る",
+      "mean": "받다; 수령하다",
+      "furigana": "うけとる",
+      "exampleSentence": "昨日、家族からの荷物を受け取りました。",
+      "exampleSentenceMean": "어제 가족이 보낸 짐을 받았습니다."
+    },
+    {
+      "word": "支払う",
+      "mean": "지불하다",
+      "furigana": "しはらう",
+      "exampleSentence": "ホテルの料金はカードで支払いました。",
+      "exampleSentenceMean": "호텔 요금은 카드로 지불했습니다."
+    },
+    {
+      "word": "間に合わせる",
+      "mean": "제시간에 맞추다",
+      "furigana": "まにあわせる",
+      "exampleSentence": "発表に間に合わせるため、急いで資料を作りました。",
+      "exampleSentenceMean": "발표 시간에 맞추려고 서둘러 자료를 만들었습니다."
+    },
+    {
+      "word": "諦める",
+      "mean": "포기하다",
+      "furigana": "あきらめる",
+      "exampleSentence": "一度失敗しても、夢を諦めないでください。",
+      "exampleSentenceMean": "한 번 실패하더라도 꿈을 포기하지 마세요."
+    },
+    {
+      "word": "防ぐ",
+      "mean": "막다; 예방하다",
+      "furigana": "ふせぐ",
+      "exampleSentence": "事故を防ぐために、交差点では十分に注意してください。",
+      "exampleSentenceMean": "사고를 예방하기 위해 교차로에서는 충분히 주의해 주세요."
+    },
+    {
+      "word": "正確だ",
+      "mean": "정확하다",
+      "furigana": "せいかくだ",
+      "exampleSentence": "この時計は古いですが、時間は正確です。",
+      "exampleSentenceMean": "이 시계는 오래되었지만 시간은 정확합니다."
+    },
+    {
+      "word": "適切だ",
+      "mean": "적절하다",
+      "furigana": "てきせつだ",
+      "exampleSentence": "相手に合わせて、適切な言葉を選びましょう。",
+      "exampleSentenceMean": "상대에 맞춰 적절한 말을 고릅시다."
+    },
+    {
+      "word": "積極的だ",
+      "mean": "적극적이다",
+      "furigana": "せっきょくてきだ",
+      "exampleSentence": "授業では積極的に質問するようにしています。",
+      "exampleSentenceMean": "수업에서는 적극적으로 질문하려고 노력하고 있습니다."
+    },
+    {
+      "word": "消極的だ",
+      "mean": "소극적이다",
+      "furigana": "しょうきょくてきだ",
+      "exampleSentence": "人前で話すことには、まだ少し消極的です。",
+      "exampleSentenceMean": "사람들 앞에서 말하는 데에는 아직 조금 소극적입니다."
+    },
+    {
+      "word": "具体的だ",
+      "mean": "구체적이다",
+      "furigana": "ぐたいてきだ",
+      "exampleSentence": "先生は具体的な例を使って説明してくれました。",
+      "exampleSentenceMean": "선생님은 구체적인 예를 들어 설명해 주셨습니다."
+    },
+    {
+      "word": "重要だ",
+      "mean": "중요하다",
+      "furigana": "じゅうようだ",
+      "exampleSentence": "この資料には重要な情報が書かれています。",
+      "exampleSentenceMean": "이 자료에는 중요한 정보가 적혀 있습니다."
+    },
+    {
+      "word": "面倒だ",
+      "mean": "귀찮다; 번거롭다",
+      "furigana": "めんどうだ",
+      "exampleSentence": "毎回名前を書くのは面倒です。",
+      "exampleSentenceMean": "매번 이름을 쓰는 것은 번거롭습니다."
+    },
+    {
+      "word": "退屈だ",
+      "mean": "지루하다; 심심하다",
+      "furigana": "たいくつだ",
+      "exampleSentence": "待ち時間が長くて、少し退屈でした。",
+      "exampleSentenceMean": "기다리는 시간이 길어서 조금 지루했습니다."
+    },
+    {
+      "word": "苦しい",
+      "mean": "괴롭다; 고통스럽다; 숨이 차다",
+      "furigana": "くるしい",
+      "exampleSentence": "坂道を走ったので、息が苦しくなりました。",
+      "exampleSentenceMean": "비탈길을 달려서 숨이 찼습니다."
+    },
+    {
+      "word": "詳しい",
+      "mean": "자세하다; 잘 알다",
+      "furigana": "くわしい",
+      "exampleSentence": "姉は日本の歴史に詳しいです。",
+      "exampleSentenceMean": "누나는 일본 역사를 잘 압니다."
+    },
+    {
+      "word": "例えば",
+      "mean": "예를 들면",
+      "furigana": "たとえば",
+      "exampleSentence": "運動を始めたいです。例えば、水泳はどうでしょうか。",
+      "exampleSentenceMean": "운동을 시작하고 싶습니다. 예를 들어 수영은 어떨까요?"
+    },
+    {
+      "word": "必ずしも",
+      "mean": "반드시; 꼭(~인 것은 아니다)",
+      "furigana": "かならずしも",
+      "exampleSentence": "値段が高い物が必ずしも良いとは限りません。",
+      "exampleSentenceMean": "가격이 비싼 물건이 반드시 좋은 것은 아닙니다."
+    },
+    {
+      "word": "突然",
+      "mean": "갑자기; 돌연",
+      "furigana": "とつぜん",
+      "exampleSentence": "帰り道で突然雨が降り始めました。",
+      "exampleSentenceMean": "돌아오는 길에 갑자기 비가 내리기 시작했습니다."
+    },
+    {
+      "word": "ますます",
+      "mean": "점점 더; 더욱더",
+      "furigana": "ますます",
+      "exampleSentence": "日本語が分かるようになって、勉強がますます楽しくなりました。",
+      "exampleSentenceMean": "일본어를 이해하게 되면서 공부가 점점 더 즐거워졌습니다."
+    },
+    {
+      "word": "つい",
+      "mean": "무심코; 나도 모르게",
+      "furigana": "つい",
+      "exampleSentence": "おいしかったので、ついケーキを二つ食べてしまいました。",
+      "exampleSentenceMean": "맛있어서 나도 모르게 케이크를 두 개 먹어 버렸습니다."
+    }
+  ]
+}
