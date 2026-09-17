@@ -5,6 +5,8 @@ import { days, previewWord, swipeFeedback, words } from "@/lib/words";
 import { SpeechButton } from "@/components/speech-button";
 import { useSavedWords } from "@/lib/use-saved-words";
 import { useCardSettings } from "@/lib/use-card-settings";
+import { useStudyProgress } from "@/lib/use-study-progress";
+import { HiddenStudyText } from "@/components/hidden-study-text";
 export function WordStudy({
     savedOnly = false,
     preview = false,
@@ -29,6 +31,7 @@ export function WordStudy({
         importLocal,
         reload,
     } = useSavedWords(!preview);
+    const progress = useStudyProgress(!preview && !savedOnly);
     const [index, setIndex] = useState(0);
     const [drag, setDrag] = useState({ distance: 0, width: 1 });
     const [dragging, setDragging] = useState(false);
@@ -38,6 +41,8 @@ export function WordStudy({
     );
     const deciding = useRef(false);
     const day = days[dayIndex];
+    const finishing = !preview && !savedOnly && index === day.words.length - 1;
+    const studyBusy = busy || progress.busy;
     const savedWords = savedOnly
         ? words.filter((item) => saved.includes(item.id))
         : [];
@@ -73,7 +78,7 @@ export function WordStudy({
         }
     }
     async function decide(action: string) {
-        if (savedOnly || deciding.current || busy || !word) return;
+        if (savedOnly || deciding.current || studyBusy || !word || (finishing && !progress.ready)) return;
         if (preview) {
             setNotice(
                 action === "save"
@@ -88,6 +93,8 @@ export function WordStudy({
         try {
             if (action === "save" && (!ready || !(await updateSaved(word.id))))
                 return;
+            // 마지막 단어를 넘기고 완료 기록까지 저장한 뒤 종료 화면을 보여줍니다.
+            if (finishing && !(await progress.completeDay(day.id))) return;
             setNotice(
                 action === "save"
                     ? `${word.text}을(를) 단어장에 저장했어요.`
@@ -139,11 +146,16 @@ export function WordStudy({
                 </Link>
             )}
             <p role="status" className="mt-4 min-h-5 text-sm text-muted">
-                {error || (busy ? "단어장을 저장하는 중…" : notice)}
+                {error || progress.error || (progress.busy ? "학습 완료를 저장하는 중…" : busy ? "단어장을 저장하는 중…" : notice)}
             </p>
             {!preview && error && (
                 <button className="secondary-button mt-2" onClick={reload}>
                     다시 불러오기
+                </button>
+            )}
+            {!preview && progress.error && !progress.ready && (
+                <button className="secondary-button mt-2" onClick={progress.reload}>
+                    학습 기록 다시 불러오기
                 </button>
             )}
             {savedOnly && account && (
@@ -241,7 +253,7 @@ export function WordStudy({
                         aria-describedby={swipeHelpId}
                         onPointerDown={(event) => {
                             if (
-                                busy ||
+                                studyBusy ||
                                 deciding.current ||
                                 !event.isPrimary ||
                                 event.button !== 0 ||
@@ -323,7 +335,8 @@ export function WordStudy({
                                 <p className="px-4 pb-3 text-xs leading-5 text-card-muted">
                                     모든 학습 카드에 적용돼요. 일본어·뜻 설정은
                                     예문에도 적용되며, 듣기는 계속 사용할 수
-                                    있어요.
+                                    있어요. 숨긴 항목을 터치하면 3초 동안 해당
+                                    항목만 보여요. 다시 터치하면 바로 숨겨져요.
                                 </p>
                             </details>
                         )}
@@ -332,9 +345,12 @@ export function WordStudy({
                             className="mt-12 break-words font-japanese text-[clamp(2.5rem,7vw,5rem)]"
                         >
                             {hideWord ? (
-                                <span className="font-sans text-xl text-card-muted">
-                                    일본어 단어 숨김
-                                </span>
+                                <HiddenStudyText
+                                    text={word.text}
+                                    label="일본어 단어"
+                                    lang="ja"
+                                    placeholderClassName="font-sans text-xl text-card-muted"
+                                />
                             ) : (
                                 word.text
                             )}
@@ -344,9 +360,12 @@ export function WordStudy({
                             className="mt-6 break-words text-xl tracking-widest text-card-muted"
                         >
                             {hideReading ? (
-                                <span className="text-sm tracking-normal">
-                                    발음 숨김
-                                </span>
+                                <HiddenStudyText
+                                    text={word.reading}
+                                    label="발음"
+                                    lang="ja"
+                                    placeholderClassName="text-sm tracking-normal"
+                                />
                             ) : (
                                 word.reading
                             )}
@@ -358,9 +377,11 @@ export function WordStudy({
                         />
                         <p className="mt-8 mb-6 text-2xl font-semibold">
                             {hideMeaning ? (
-                                <span className="text-sm font-normal text-card-muted">
-                                    뜻 숨김
-                                </span>
+                                <HiddenStudyText
+                                    text={word.meaning}
+                                    label="뜻"
+                                    placeholderClassName="text-sm font-normal text-card-muted"
+                                />
                             ) : (
                                 word.meaning
                             )}
@@ -375,17 +396,23 @@ export function WordStudy({
                                     className="break-words text-lg leading-8"
                                 >
                                     {hideWord ? (
-                                        <span className="text-sm text-card-muted">
-                                            일본어 예문 숨김
-                                        </span>
+                                        <HiddenStudyText
+                                            text={word.example}
+                                            label="일본어 예문"
+                                            lang="ja"
+                                            placeholderClassName="text-sm text-card-muted"
+                                        />
                                     ) : (
                                         word.example
                                     )}
                                 </p>
                                 <p className="mt-2 break-words text-sm leading-7 text-card-muted">
-                                    {hideMeaning
-                                        ? "예문 뜻 숨김"
-                                        : word.translation}
+                                    {hideMeaning ? (
+                                        <HiddenStudyText
+                                            text={word.translation}
+                                            label="예문 뜻"
+                                        />
+                                    ) : word.translation}
                                 </p>
                                 <SpeechButton
                                     text={word.example}
@@ -435,14 +462,14 @@ export function WordStudy({
                             <>
                                 <button
                                     className="secondary-button"
-                                    disabled={busy}
+                                    disabled={studyBusy || (finishing && !progress.ready)}
                                     onClick={() => decide("known")}
                                 >
                                     ← 알고있어요
                                 </button>
                                 <button
                                     className="primary-button"
-                                    disabled={!preview && (!ready || busy)}
+                                    disabled={!preview && (!ready || studyBusy || (finishing && !progress.ready))}
                                     onClick={() => decide("save")}
                                 >
                                     몰랐어요 →
