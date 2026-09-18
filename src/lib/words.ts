@@ -18,6 +18,8 @@ import day17 from "../data/words/day17.json";
 import day18 from "../data/words/day18.json";
 import day19 from "../data/words/day19.json";
 import day20 from "../data/words/day20.json";
+import day21 from "../data/words/day21.json";
+import day22 from "../data/words/day22.json";
 
 const legacyWords = [
   { id: "kotoba", text: "言葉", reading: "ことば", meaning: "말, 언어" },
@@ -27,7 +29,7 @@ const legacyWords = [
   { id: "tomodachi", text: "友達", reading: "ともだち", meaning: "친구" },
 ];
 export const previewWord = { ...legacyWords[0], example: "", translation: "" };
-export const days = [day01, day02, day03, day04, day05, day06, day07, day08, day09, day10, day11, day12, day13, day14, day15, day16, day17, day18, day19, day20].map((day, dayIndex) => ({
+export const days = [day01, day02, day03, day04, day05, day06, day07, day08, day09, day10, day11, day12, day13, day14, day15, day16, day17, day18, day19, day20, day21, day22].map((day, dayIndex) => ({
   id: day.day,
   label: `Day ${String(dayIndex + 1).padStart(2, "0")}`,
   words: day.words.map((word, index) => ({
