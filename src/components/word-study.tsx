@@ -33,6 +33,7 @@ export function WordStudy({
     } = useSavedWords(!preview);
     const progress = useStudyProgress(!preview && !savedOnly);
     const [index, setIndex] = useState(0);
+    const [savedOrder, setSavedOrder] = useState<string[]>([]);
     const [drag, setDrag] = useState({ distance: 0, width: 1 });
     const [dragging, setDragging] = useState(false);
     const [notice, setNotice] = useState("");
@@ -43,8 +44,12 @@ export function WordStudy({
     const day = days[dayIndex];
     const finishing = !preview && !savedOnly && index === day.words.length - 1;
     const studyBusy = busy || progress.busy;
+    const savedPositions = new Map(savedOrder.map((id, position) => [id, position]));
     const savedWords = savedOnly
-        ? words.filter((item) => saved.includes(item.id))
+        ? words.filter((item) => saved.includes(item.id)).sort((a, b) =>
+              (savedPositions.get(a.id) ?? savedOrder.length) -
+              (savedPositions.get(b.id) ?? savedOrder.length),
+          )
         : [];
     const savedIndex = Math.min(index, Math.max(0, savedWords.length - 1));
     const word = preview
@@ -52,6 +57,22 @@ export function WordStudy({
         : savedOnly
           ? savedWords[savedIndex]
           : day.words[index];
+    function shuffleSavedWords() {
+        if (!ready || busy || deciding.current || savedWords.length < 2) return;
+        const shuffled = savedWords.map((item) => item.id);
+        for (let position = shuffled.length - 1; position > 0; position--) {
+            const target = Math.floor(Math.random() * (position + 1));
+            [shuffled[position], shuffled[target]] = [shuffled[target], shuffled[position]];
+        }
+        // 우연히 같은 순서가 나오더라도 버튼을 누르면 순서가 바뀌도록 합니다.
+        if (shuffled.every((id, position) => id === savedWords[position].id)) {
+            [shuffled[0], shuffled[1]] = [shuffled[1], shuffled[0]];
+        }
+        resetDrag();
+        setSavedOrder(shuffled);
+        setIndex(0);
+        setNotice("단어 순서를 섞었어요. 첫 단어부터 다시 시작해요.");
+    }
     function moveSavedWord(direction: number) {
         resetDrag();
         if (!ready || busy || deciding.current) return;
@@ -231,6 +252,18 @@ export function WordStudy({
                     className={`mx-auto flex max-w-2xl flex-col justify-center px-1 py-6 ${preview ? "" : "min-h-[60svh]"}`}
                     aria-label="단어 카드"
                 >
+                    {savedOnly && (
+                        <div className="mb-4 flex justify-end">
+                            <button
+                                type="button"
+                                className="secondary-button"
+                                disabled={!ready || busy || savedWords.length < 2}
+                                onClick={shuffleSavedWords}
+                            >
+                                순서 섞기
+                            </button>
+                        </div>
+                    )}
                     <p
                         id={swipeHelpId}
                         className="mb-4 text-center text-sm text-muted"
