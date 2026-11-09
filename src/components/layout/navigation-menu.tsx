@@ -8,6 +8,7 @@ const menuItems = [
   { href: "/", label: "서비스 소개", description: "주분주분 알아보기" },
   { href: "/learn", label: "단어 학습", description: "오늘의 일본어 한 조각" },
   { href: "/conversation", label: "AI 회화 학습", description: "매일 새로운 표현과 예문 익히기" },
+  { href: "/writing", label: "일본어 작문", description: "N3 한국어 문장 10개를 쓰고 채점받기" },
   { href: "/saved", label: "내 단어장", description: "저장한 단어 다시 보기" },
 ];
 
