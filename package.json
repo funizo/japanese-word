@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "typecheck": "next typegen && tsc --noEmit",
-    "test:ai-study": "node scripts/check-ai-study.mjs"
+    "test:ai-study": "node scripts/check-ai-study.mjs",
+    "test:writing": "node scripts/check-writing.mjs"
   },
   "dependencies": {
     "@supabase/supabase-js": "^2.116.0",

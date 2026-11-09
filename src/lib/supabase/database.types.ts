@@ -5,6 +5,10 @@ type Table<Row, Insert, Update = Partial<Insert>> = { Row: Row; Insert: Insert; 
 export type Database = {
   public: {
     Tables: {
+      writing_days: Table<{ study_date: string; status: string; model: string | null; created_at: string }, never>;
+      writing_questions: Table<{ study_date: string; question_index: number; korean: string; korean_key: string }, never>;
+      writing_answers: Table<{ user_id: string; study_date: string; question_index: number; answer: string; version: number; updated_at: string }, never>;
+      writing_results: Table<{ user_id: string; study_date: string; question_index: number; answer_version: number; score: number; feedback: string; corrected: string; points: Json; reference: string; reading: string; explanation: string; grammar: Json; alternatives: Json; graded_at: string }, never>;
       ai_study_days: Table<
         { user_id: string; study_date: string; lessons: Json; model: string; created_at: string },
         { user_id: string; study_date: string; lessons: Json; model: string; created_at?: string }
@@ -37,6 +41,7 @@ export type Database = {
     };
     Views: { [_ in never]: never };
     Functions: {
+      writing_command: { Args: { p_secret: string; p_action: string; p_payload: Json }; Returns: Json };
       claim_ai_generation: { Args: { p_kind: string }; Returns: string };
       save_ai_study_day: { Args: { p_request_id: string; p_lessons: Json; p_terms: Json; p_model: string }; Returns: undefined };
       append_ai_study_examples: { Args: { p_request_id: string; p_date: string; p_index: number; p_examples: Json }; Returns: undefined };

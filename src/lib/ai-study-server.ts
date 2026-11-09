@@ -8,9 +8,9 @@ export class StudyError extends Error {
   constructor(message: string, public status = 500) { super(message); }
 }
 
-export async function studyClient(request: Request): Promise<{ client: Client; userId: string }> {
+export async function studyClient(request: Request, feature = "AI 회화 학습"): Promise<{ client: Client; userId: string }> {
   const token = request.headers.get("Authorization")?.match(/^Bearer (\S+)$/)?.[1];
-  if (!token) throw new StudyError("로그인 후 AI 회화 학습을 이용해 주세요.", 401);
+  if (!token) throw new StudyError(`로그인 후 ${feature}을 이용해 주세요.`, 401);
   const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
   const key = process.env.NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY;
   if (!url || !key) throw new StudyError("학습 저장소 설정이 필요해요.", 503);
@@ -65,13 +65,17 @@ async function previousTerms(client: Client, userId: string) {
 }
 
 async function generate(input: string, schema: unknown): Promise<unknown> {
+  return generateStructured(input, schema, studyInstructions, "japanese_study");
+}
+
+export async function generateStructured(input: string, schema: unknown, instructions: string, name: string): Promise<unknown> {
   const key = process.env.OPENAI_API_KEY;
   if (!key) throw new StudyError("AI 연결 설정이 아직 준비되지 않았어요. 잠시 후 다시 이용해 주세요.", 503);
   let response: Response;
   try {
     response = await fetch(`${process.env.OPENAI_BASE_URL ?? "https://api.openai.com/v1"}/responses`, {
       method: "POST", headers: { Authorization: `Bearer ${key}`, "Content-Type": "application/json" },
-      body: JSON.stringify({ model: process.env.OPENAI_MODEL ?? "gpt-6-luna", instructions: studyInstructions, input, store: false, max_output_tokens: 12000, text: { format: { type: "json_schema", name: "japanese_study", strict: true, schema } } }),
+      body: JSON.stringify({ model: process.env.OPENAI_MODEL ?? "gpt-6-luna", instructions, input, store: false, max_output_tokens: 12000, text: { format: { type: "json_schema", name, strict: true, schema } } }),
       signal: AbortSignal.timeout(85000),
     });
   } catch { throw new StudyError("AI 응답을 기다리는 시간이 길어졌어요. 잠시 후 다시 시도해 주세요.", 504); }
@@ -147,10 +151,10 @@ export async function generateStudy(client: Client, userId: string, kind: "daily
   throw new StudyError("자료를 생성하지 못했어요.", 502);
 }
 
-export async function readStudyBody(request: Request): Promise<Record<string, unknown>> {
+export async function readStudyBody(request: Request, maxBytes = 4096): Promise<Record<string, unknown>> {
   if (request.headers.get("Origin") !== new URL(request.url).origin) throw new StudyError("요청을 확인할 수 없어요. 페이지를 새로고침해 주세요.", 403);
   if (!request.headers.get("Content-Type")?.startsWith("application/json")) throw new StudyError("올바른 요청 형식이 아니에요.", 415);
-  if (Number(request.headers.get("Content-Length") ?? 0) > 4096) throw new StudyError("요청 내용이 너무 커요.", 413);
+  if (Number(request.headers.get("Content-Length") ?? 0) > maxBytes) throw new StudyError("요청 내용이 너무 커요.", 413);
   const reader = request.body?.getReader();
   if (!reader) throw new StudyError("요청 내용이 없어요.", 400);
   const chunks: Uint8Array[] = [];
@@ -159,7 +163,7 @@ export async function readStudyBody(request: Request): Promise<Record<string, un
     const { done, value } = await reader.read();
     if (done) break;
     size += value.byteLength;
-    if (size > 4096) { await reader.cancel(); throw new StudyError("요청 내용이 너무 커요.", 413); }
+    if (size > maxBytes) { await reader.cancel(); throw new StudyError("요청 내용이 너무 커요.", 413); }
     chunks.push(value);
   }
   let body: unknown;
