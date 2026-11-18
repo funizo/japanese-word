@@ -33,9 +33,9 @@ export type Database = {
         Relationships: [];
       };
       saved_words: {
-        Row: { user_id: string; word_id: string; created_at: string };
-        Insert: { user_id: string; word_id: string; created_at?: string };
-        Update: { user_id?: string; word_id?: string; created_at?: string };
+        Row: { user_id: string; word_id: string; created_at: string; is_starred: boolean };
+        Insert: { user_id: string; word_id: string; created_at?: string; is_starred?: boolean };
+        Update: { is_starred?: boolean };
         Relationships: [];
       };
     };
