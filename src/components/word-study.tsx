@@ -23,17 +23,20 @@ export function WordStudy({
     const hideMeaning = !preview && hidden.meaning;
     const {
         saved,
+        starred,
         ready,
         busy,
         error,
         account,
         updateSaved,
+        updateStarred,
         importLocal,
         reload,
     } = useSavedWords(!preview);
     const progress = useStudyProgress(!preview && !savedOnly);
     const [index, setIndex] = useState(0);
     const [savedOrder, setSavedOrder] = useState<string[]>([]);
+    const [starredOnly, setStarredOnly] = useState(false);
     const [drag, setDrag] = useState({ distance: 0, width: 1 });
     const [dragging, setDragging] = useState(false);
     const [notice, setNotice] = useState("");
@@ -46,7 +49,7 @@ export function WordStudy({
     const studyBusy = busy || progress.busy;
     const savedPositions = new Map(savedOrder.map((id, position) => [id, position]));
     const savedWords = savedOnly
-        ? words.filter((item) => saved.includes(item.id)).sort((a, b) =>
+        ? words.filter((item) => saved.includes(item.id) && (!starredOnly || starred.includes(item.id))).sort((a, b) =>
               (savedPositions.get(a.id) ?? savedOrder.length) -
               (savedPositions.get(b.id) ?? savedOrder.length),
           )
@@ -57,6 +60,20 @@ export function WordStudy({
         : savedOnly
           ? savedWords[savedIndex]
           : day.words[index];
+    const isStarred = Boolean(word && starred.includes(word.id));
+    async function toggleStar() {
+        if (!word || !ready || busy || deciding.current) return;
+        deciding.current = true;
+        resetDrag();
+        try {
+            if (await updateStarred(word.id, !isStarred)) {
+                if (starredOnly && isStarred) setIndex(Math.min(savedIndex, Math.max(0, savedWords.length - 2)));
+                setNotice(isStarred ? "별표를 해제했어요. 단어장에는 그대로 남아 있어요." : "별표를 표시했어요. 별표한 단어에서 모아볼 수 있어요.");
+            }
+        } finally {
+            deciding.current = false;
+        }
+    }
     function shuffleSavedWords() {
         if (!ready || busy || deciding.current || savedWords.length < 2) return;
         const shuffled = savedWords.map((item) => item.id);
@@ -159,6 +176,11 @@ export function WordStudy({
                                 : "단어장은 현재 브라우저에 저장돼요. 로그인하면 계정 단어장을 사용할 수 있어요."
                             : "카드를 왼쪽으로 밀면 아는 단어, 오른쪽으로 밀면 외우고 싶은 단어로 저장돼요."}
                     </p>
+                    {savedOnly && (
+                        <p className="mt-2 text-sm text-muted">
+                            빨리 외우고 싶은 단어에 별표를 눌러보세요. 별표한 단어만 모아서 복습할 수 있어요.
+                        </p>
+                    )}
                 </>
             )}
             {!preview && !savedOnly && (
@@ -187,12 +209,37 @@ export function WordStudy({
                         setNotice("");
                         if (await importLocal())
                             setNotice(
-                                "이 브라우저의 단어를 계정 단어장에 추가했어요. 기존 브라우저 단어장도 유지돼요.",
+                                "이 브라우저의 단어와 별표를 계정 단어장에 추가했어요. 기존 브라우저 기록도 유지돼요.",
                             );
                     }}
                 >
                     이 브라우저의 단어 가져오기
                 </button>
+            )}
+            {savedOnly && (
+                <div role="group" aria-label="단어장 필터" className="mt-6 flex flex-wrap gap-2">
+                    {[
+                        { value: false, label: "전체 단어", count: saved.length },
+                        { value: true, label: "★ 별표한 단어", count: starred.length },
+                    ].map(({ value, label, count }) => (
+                        <button
+                            key={label}
+                            type="button"
+                            aria-pressed={starredOnly === value}
+                            className={starredOnly === value ? "primary-button" : "secondary-button"}
+                            disabled={!ready || busy}
+                            onClick={() => {
+                                if (deciding.current) return;
+                                resetDrag();
+                                setStarredOnly(value);
+                                setIndex(0);
+                                setNotice("");
+                            }}
+                        >
+                            {label}{ready ? ` (${count})` : ""}
+                        </button>
+                    ))}
+                </div>
             )}
             {savedOnly && (!ready || !word) ? (
                 <section className="mt-6" aria-label="저장한 단어">
@@ -205,14 +252,20 @@ export function WordStudy({
                     ) : (
                         <div className="panel py-16 text-center">
                             <p className="text-2xl font-semibold">
-                                아직 비어 있는 노트
+                                {starredOnly ? "아직 별표한 단어가 없어요" : "아직 비어 있는 노트"}
                             </p>
                             <p className="mt-3 text-muted">
-                                학습하며 기억하고 싶은 단어를 담아보세요.
+                                {starredOnly ? "전체 단어에서 빨리 외우고 싶은 단어에 별표를 눌러보세요." : "학습하며 기억하고 싶은 단어를 담아보세요."}
                             </p>
-                            <Link className="primary-button mt-6" href="/learn">
-                                단어 담으러 가기 →
-                            </Link>
+                            {starredOnly ? (
+                                <button className="primary-button mt-6" onClick={() => { setStarredOnly(false); setIndex(0); }}>
+                                    전체 단어 보기
+                                </button>
+                            ) : (
+                                <Link className="primary-button mt-6" href="/learn">
+                                    단어 담으러 가기 →
+                                </Link>
+                            )}
                         </div>
                     )}
                 </section>
@@ -317,17 +370,35 @@ export function WordStudy({
                             if (pointer.current) resetDrag();
                         }}
                     >
-                        <p
-                            className="text-sm text-card-muted"
-                            aria-live="polite"
-                            aria-atomic="true"
-                        >
-                            {preview
-                                ? "미리보기 · 1 / 1"
-                                : savedOnly
-                                  ? `내 단어장 · ${savedIndex + 1} / ${savedWords.length}`
-                                  : `${day.label} · ${index + 1} / ${day.words.length}`}
-                        </p>
+                        <div className="flex min-h-11 items-center justify-center gap-3">
+                            <p
+                                className="text-sm text-card-muted"
+                                aria-live="polite"
+                                aria-atomic="true"
+                            >
+                                {preview
+                                    ? "미리보기 · 1 / 1"
+                                    : savedOnly
+                                      ? `${starredOnly ? "별표한 단어" : "내 단어장"} · ${savedIndex + 1} / ${savedWords.length}`
+                                      : `${day.label} · ${index + 1} / ${day.words.length}`}
+                            </p>
+                            {savedOnly && (
+                                <button
+                                    type="button"
+                                    aria-label={isStarred ? "빨리 외울 단어 별표 해제" : "빨리 외울 단어로 별표 표시"}
+                                    aria-pressed={isStarred}
+                                    title={isStarred ? "별표 해제" : "빨리 외울 단어로 표시"}
+                                    disabled={!ready || busy}
+                                    onPointerDown={(event) => event.stopPropagation()}
+                                    onClick={toggleStar}
+                                    className={`inline-flex size-11 shrink-0 cursor-pointer items-center justify-center rounded-xl border border-white/25 hover:bg-white/10 focus-visible:outline-white disabled:opacity-50 ${isStarred ? "text-amber-300" : "text-card-muted"}`}
+                                >
+                                    <svg width="26" height="26" viewBox="0 0 24 24" fill={isStarred ? "currentColor" : "none"} stroke="currentColor" strokeWidth="1.7" strokeLinejoin="round" aria-hidden="true">
+                                        <path d="m12 3 2.78 5.63L21 9.54l-4.5 4.38 1.06 6.2L12 17.2l-5.56 2.92 1.06-6.2L3 9.54l6.22-.91L12 3Z" />
+                                    </svg>
+                                </button>
+                            )}
+                        </div>
                         {!preview && (
                             <details
                                 className="mt-4 rounded-xl border border-white/20 bg-white/5 text-left"
